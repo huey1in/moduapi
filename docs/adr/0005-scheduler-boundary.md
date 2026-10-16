@@ -21,3 +21,10 @@ Mature gateways need highest-available priority tiers followed by within-tier we
 ## Trade-offs
 
 Only first-eligible and process-local round robin ship now. Weighting, shared health, queue reservations, sticky key extraction and distributed leases remain future scheduler work. Feedback is bounded best effort; concurrency plugins must expire leases to recover from lost reports. Replay opt-in may duplicate upstream work, and this slice makes no same-candidate replay or exactly-once promise.
+
+## Phase 2 implementation update
+
+The boundary remains accepted. The optional advanced scheduler now implements
+weighting, health feedback, bounded local reservations and sticky state, as specified
+in [ADR 0007](0007-scheduler-policy-and-admission.md). Distributed leases and waiting
+queues remain deferred. The original trade-offs above describe the Phase 1 delivery.
