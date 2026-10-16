@@ -1,0 +1,40 @@
+server:
+  listen: "127.0.0.1:8080"
+plugins:
+  directory: "../dist/plugins"
+  config:
+    scheduler.priority-weight-health:
+      health:
+        enabled: true
+        ewma_alpha: 0.2
+        failure_threshold: 3
+        cooldown: 5s
+        min_weight_factor: 0.1
+      sticky:
+        mode: prefer
+        ttl: 1h
+        max_entries: 10000
+        escape_on_unhealthy: true
+        escape_on_capacity: true
+      lease_ttl: 6m
+      cleanup_interval: 1s
+routes:
+  - id: default
+    protocol: openai.chat
+    model: "*"
+    upstreams: [primary, fallback]
+    scheduler: scheduler.priority-weight-health
+upstreams:
+  primary:
+    plugin: upstream.http
+    config: {base_url: "http://127.0.0.1:9090/v1"}
+    metadata:
+      moduapi.scheduler.priority: "10"
+      moduapi.scheduler.weight: "2"
+      moduapi.scheduler.capacity: "10"
+  fallback:
+    plugin: upstream.http
+    config: {base_url: "http://127.0.0.1:9091/v1"}
+    metadata:
+      moduapi.scheduler.priority: "5"
+      moduapi.scheduler.weight: "1"

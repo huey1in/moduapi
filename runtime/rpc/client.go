@@ -30,6 +30,12 @@ func decodeError(err error) error {
 		return context.Canceled
 	case codes.DeadlineExceeded:
 		return context.DeadlineExceeded
+	case codes.InvalidArgument, codes.FailedPrecondition, codes.OutOfRange, codes.PermissionDenied, codes.Unauthenticated, codes.ResourceExhausted, codes.NotFound, codes.AlreadyExists:
+		return sdk.Fail(sdk.Local, "plugin_rejected", "plugin rejected the call", 400)
+	case codes.Unimplemented:
+		return sdk.Fail(sdk.PluginError, "plugin_unimplemented", "plugin method is not implemented", 502)
+	case codes.Internal, codes.Unknown, codes.DataLoss:
+		return sdk.Fail(sdk.PluginError, "plugin_internal", "plugin call failed", 502)
 	}
 	return sdk.Fail(sdk.PluginError, "plugin_unavailable", "plugin call failed", 502)
 }

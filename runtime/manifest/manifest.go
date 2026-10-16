@@ -31,9 +31,10 @@ type Manifest struct {
 	Path         string         `yaml:"-" json:"-"`
 }
 type Runtime struct {
-	Type    string   `yaml:"type" json:"type"`
-	Command string   `yaml:"command" json:"command"`
-	Args    []string `yaml:"args,omitempty" json:"args,omitempty"`
+	Type        string   `yaml:"type" json:"type"`
+	Interpreter string   `yaml:"interpreter,omitempty" json:"interpreter,omitempty"`
+	Command     string   `yaml:"command" json:"command"`
+	Args        []string `yaml:"args,omitempty" json:"args,omitempty"`
 }
 type Requirements struct {
 	Gateway string `yaml:"gateway" json:"gateway"`
@@ -63,19 +64,26 @@ func (m Manifest) Validate() error {
 	if m.Name == "" || len(m.Name) > 200 {
 		return bad("invalid name")
 	}
-	if m.Runtime.Type != "process" {
-		return bad("runtime.type must be process")
+	if m.Runtime.Type != "process" && m.Runtime.Type != "interpreter" {
+		return bad("runtime.type must be process or interpreter")
+	}
+	i := m.Runtime.Interpreter
+	if m.Runtime.Type == "process" && i != "" {
+		return bad("native runtime cannot specify interpreter")
+	}
+	if m.Runtime.Type == "interpreter" && (i == "" || strings.ContainsRune(i, 0) || (!filepath.IsAbs(i) && strings.ContainsAny(i, "/\\: \t\r\n"))) {
+		return bad("interpreter must be a PATH name or absolute path")
 	}
 	c := strings.ReplaceAll(m.Runtime.Command, "\\", "/")
-	if !strings.HasPrefix(c, "./") || strings.Contains(c, ":") || strings.ContainsRune(c, 0) {
-		return bad("command must be package-relative (./binary)")
+	if c == "" || strings.HasPrefix(c, "/") || strings.Contains(c, ":") || strings.ContainsRune(c, 0) {
+		return bad("command must be package-relative")
 	}
 	for _, p := range strings.Split(c, "/") {
 		if p == ".." {
 			return bad("command escapes package")
 		}
 	}
-	if c == "./" || len(m.Runtime.Args) > 64 {
+	if c == "./" || c == "." || len(m.Runtime.Args) > 64 {
 		return bad("invalid runtime command/args")
 	}
 	if ok, e := Satisfies(sdk.GatewayVersion, m.Requires.Gateway); e != nil || !ok {

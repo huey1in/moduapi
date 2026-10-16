@@ -1,4 +1,6 @@
-.PHONY: build test race vet check mock serve generate
+.PHONY: build test race vet check mock serve generate conformance
+conformance:
+	go run ./tools/conformance
 build:
 	go run ./tools/build
 test:

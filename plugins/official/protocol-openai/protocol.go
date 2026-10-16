@@ -78,7 +78,11 @@ func (Protocol) Decode(ctx context.Context, in *sdk.Ingress) (*sdk.Request, erro
 	if stream {
 		h.Set("Accept", "text/event-stream")
 	}
-	return &sdk.Request{Id: in.Id, Protocol: "openai.chat", Model: model, Stream: stream, Method: http.MethodPost, Path: "/chat/completions", Headers: sdk.Headers(h), Body: in.Body}, nil
+	var metadata map[string]string
+	if key := sdk.HTTPHeaders(in.Headers).Get("X-Moduapi-Affinity"); len(key) > 0 && len(key) <= 512 {
+		metadata = map[string]string{sdk.AffinityKey: key}
+	}
+	return &sdk.Request{Id: in.Id, Protocol: "openai.chat", Model: model, Stream: stream, Method: http.MethodPost, Path: "/chat/completions", Headers: sdk.Headers(h), Body: in.Body, Metadata: metadata}, nil
 }
 func (Protocol) Prepare(ctx context.Context, in *sdk.Preparation) (*sdk.Request, error) {
 	if e := ctx.Err(); e != nil {
@@ -150,7 +154,7 @@ func (Protocol) Transform(ctx context.Context, req *sdk.Request, recv sdk.Receiv
 				h.Set("X-Accel-Buffering", "no")
 				s.Headers = sdk.Headers(h)
 			}
-		case f.GetData() != nil:
+		case sdk.IsData(f):
 			if !started || len(f.GetData()) > sdk.MaxChunkBytes {
 				return sdk.Fail(sdk.ProtocolError, "invalid_chunk", "invalid upstream response frame", 502)
 			}

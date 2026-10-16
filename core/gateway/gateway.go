@@ -310,7 +310,7 @@ func (g *Gateway) attempt(w http.ResponseWriter, s *request.Context, route route
 		if failure := f.GetFailure(); failure != nil {
 			return failure.Usage, &sdk.Error{Failure: failure}
 		}
-		if f.GetData() != nil && len(f.GetData()) == 0 {
+		if sdk.IsData(f) && len(f.GetData()) == 0 {
 			continue
 		}
 		if !s.Committed {

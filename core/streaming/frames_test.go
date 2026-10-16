@@ -24,7 +24,12 @@ func TestFrameContract(t *testing.T) {
 		valid  bool
 	}{
 		{"normal", []*sdk.Frame{sdk.Start(200, nil), sdk.Data([]byte("x")), sdk.End(nil)}, true},
+		{"empty data", []*sdk.Frame{sdk.Start(200, nil), sdk.Data(nil), sdk.End(nil)}, true},
 		{"early failure", []*sdk.Frame{sdk.Failed(&sdk.Failure{Kind: sdk.Transport})}, true},
+		{"end first", []*sdk.Frame{sdk.End(nil)}, false},
+		{"multiple end", []*sdk.Frame{sdk.Start(200, nil), sdk.End(nil), sdk.End(nil)}, false},
+		{"data after end", []*sdk.Frame{sdk.Start(200, nil), sdk.End(nil), sdk.Data([]byte("x"))}, false},
+		{"failure after end", []*sdk.Frame{sdk.Start(200, nil), sdk.End(nil), sdk.Failed(&sdk.Failure{Kind: sdk.Transport})}, false},
 		{"data first", []*sdk.Frame{sdk.Data([]byte("x"))}, false},
 		{"duplicate start", []*sdk.Frame{sdk.Start(200, nil), sdk.Start(200, nil)}, false},
 		{"missing terminal", []*sdk.Frame{sdk.Start(200, nil), sdk.Data([]byte("x"))}, false},

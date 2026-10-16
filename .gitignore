@@ -3,3 +3,5 @@
 *.test
 coverage.out
 *.log
+.venv-conformance/
+__pycache__/

@@ -18,3 +18,17 @@ jobs:
       - run: go test -race ./...
       - run: go vet ./...
       - run: go run ./tools/build
+  conformance:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.2'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: go run ./tools/conformance

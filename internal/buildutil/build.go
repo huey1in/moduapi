@@ -9,7 +9,7 @@ import (
 	"runtime"
 )
 
-var Plugins = map[string]string{"protocol.openai": "protocol-openai", "upstream.http": "upstream-http", "scheduler.single": "scheduler-single", "scheduler.roundrobin": "scheduler-roundrobin"}
+var Plugins = map[string]string{"protocol.openai": "protocol-openai", "upstream.http": "upstream-http", "scheduler.single": "scheduler-single", "scheduler.roundrobin": "scheduler-roundrobin", "scheduler.priority-weight-health": "scheduler-priority-weight-health"}
 
 func Suffix() string {
 	if runtime.GOOS == "windows" {

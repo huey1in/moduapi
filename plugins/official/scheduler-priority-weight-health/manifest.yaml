@@ -1,0 +1,20 @@
+api_version: 1
+id: scheduler.priority-weight-health
+name: Priority Weight Health Scheduler
+version: 0.1.0
+runtime: {type: process, command: ./plugin}
+provides: [scheduler]
+requires: {gateway: ">=0.1.0 <1.0.0"}
+capabilities: [affinity]
+permissions: {network: [], storage: [], secrets: []}
+config_schema:
+  type: object
+  additionalProperties: false
+  properties:
+    health: {type: object}
+    sticky: {type: object}
+    lease_ttl: {type: string}
+    cleanup_interval: {type: string}
+    state_ttl: {type: string}
+    max_candidates: {type: integer}
+    max_leases: {type: integer}

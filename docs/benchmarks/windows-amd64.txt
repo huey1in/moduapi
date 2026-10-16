@@ -1,0 +1,30 @@
+goos: windows
+goarch: amd64
+pkg: github.com/huey1in/moduapi/plugins/official/scheduler-priority-weight-health
+cpu: Intel(R) Core(TM) i9-14900HX
+BenchmarkSchedulerSelect/10-32         	  157592	      1497 ns/op	    1586 B/op	       8 allocs/op
+BenchmarkSchedulerSelect/100-32        	   19863	     12285 ns/op	   15945 B/op	      14 allocs/op
+BenchmarkSchedulerSelect/1000-32       	    1789	    141226 ns/op	  199254 B/op	      25 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=10/workers=1-32         	  159933	      1506 ns/op	    1576 B/op	       8 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=10/workers=10-32        	  109318	      1903 ns/op	    1576 B/op	       8 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=10/workers=100-32       	  108090	      2038 ns/op	    1577 B/op	       8 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=10/workers=1000-32      	   98443	      2243 ns/op	    1580 B/op	       8 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=100/workers=1-32        	   16527	     15899 ns/op	   15929 B/op	      14 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=100/workers=10-32       	   14368	     18027 ns/op	   15930 B/op	      14 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=100/workers=100-32      	   13120	     57011 ns/op	   15951 B/op	      14 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=100/workers=1000-32     	    3291	     65903 ns/op	   16119 B/op	      14 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=1000/workers=1-32       	     361	    723319 ns/op	  199719 B/op	      27 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=1000/workers=10-32      	     339	    659376 ns/op	  199783 B/op	      28 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=1000/workers=100-32     	     343	    641207 ns/op	  199885 B/op	      28 allocs/op
+BenchmarkSchedulerSelectParallel/candidates=1000/workers=1000-32    	     334	    699946 ns/op	  199776 B/op	      28 allocs/op
+BenchmarkSchedulerReport/10-32                                      	  938379	       300.6 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSchedulerReport/100-32                                     	  826417	       298.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkSchedulerReport/1000-32                                    	  702867	       323.0 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWeightedSelection/10-32                                    	 3274050	        71.57 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWeightedSelection/100-32                                   	  765915	       330.5 ns/op	       0 B/op	       0 allocs/op
+BenchmarkWeightedSelection/1000-32                                  	   54046	      4077 ns/op	       0 B/op	       0 allocs/op
+BenchmarkStickySelection/10-32                                      	   26320	      8806 ns/op	    2136 B/op	      17 allocs/op
+BenchmarkStickySelection/100-32                                     	    3714	     66289 ns/op	   16488 B/op	      23 allocs/op
+BenchmarkStickySelection/1000-32                                    	     320	    678377 ns/op	  199577 B/op	      34 allocs/op
+PASS
+ok  	github.com/huey1in/moduapi/plugins/official/scheduler-priority-weight-health	13.716s

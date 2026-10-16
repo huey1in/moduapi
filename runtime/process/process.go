@@ -27,6 +27,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	"google.golang.org/grpc/metadata"
+	"google.golang.org/grpc/status"
 )
 
 type Process struct {
@@ -42,8 +43,10 @@ type Process struct {
 	ready       atomic.Bool
 	stopping    atomic.Bool
 	stopOnce    sync.Once
+	StartedAt   time.Time
 	stopped     chan struct{}
 	waitErr     error
+	stderr      *stderrTail
 }
 
 func (p *Process) Ready() bool {
@@ -57,6 +60,10 @@ func (p *Process) Ready() bool {
 func (p *Process) PID() int              { return p.cmd.Process.Pid }
 func (p *Process) Done() <-chan struct{} { return p.done }
 
+// CloseInput signals parent EOF; primarily useful to embedders shutting down
+// after their control connection has failed. Stop still owns reaping/cleanup.
+func (p *Process) CloseInput() error { return p.stdin.Close() }
+
 // ExitError is meaningful after Done closes; an intentional kill returns an error.
 func (p *Process) ExitError() error {
 	select {
@@ -69,7 +76,7 @@ func (p *Process) ExitError() error {
 func executable(m manifest.Manifest) (string, error) {
 	base := filepath.Dir(m.Path)
 	path := filepath.Join(base, m.Runtime.Command)
-	if runtime.GOOS == "windows" && filepath.Ext(path) == "" {
+	if m.Runtime.Type == "process" && runtime.GOOS == "windows" && filepath.Ext(path) == "" {
 		path += ".exe"
 	}
 	resolved, e := filepath.EvalSymlinks(path)
@@ -111,7 +118,16 @@ func Start(ctx context.Context, m manifest.Manifest, config json.RawMessage) (*P
 		return nil, e
 	}
 	token := hex.EncodeToString(secret)
-	cmd := exec.Command(path, m.Runtime.Args...)
+	args := slices.Clone(m.Runtime.Args)
+	if m.Runtime.Type == "interpreter" {
+		interpreter, err := exec.LookPath(m.Runtime.Interpreter)
+		if err != nil {
+			return nil, fmt.Errorf("resolve interpreter: %w", err)
+		}
+		args = append([]string{path}, args...)
+		path = interpreter
+	}
+	cmd := exec.Command(path, args...)
 	cmd.Dir = filepath.Dir(m.Path)
 	for _, k := range []string{"SystemRoot", "WINDIR", "PATH", "TEMP", "TMP"} {
 		if v, ok := os.LookupEnv(k); ok {
@@ -126,7 +142,8 @@ func Start(ctx context.Context, m manifest.Manifest, config json.RawMessage) (*P
 	}
 	networkJSON, _ := json.Marshal(m.Permissions.Network)
 	cmd.Env = append(cmd.Env, "MODUAPI_PLUGIN_TOKEN="+token, "MODUAPI_NETWORK_PERMISSIONS="+string(networkJSON))
-	cmd.Stderr = io.Discard
+	tail := newStderrTail()
+	cmd.Stderr = tail
 	stdin, e := cmd.StdinPipe()
 	if e != nil {
 		return nil, e
@@ -141,7 +158,7 @@ func Start(ctx context.Context, m manifest.Manifest, config json.RawMessage) (*P
 		stdout.Close()
 		return nil, e
 	}
-	p := &Process{Manifest: m, cmd: cmd, stdin: stdin, stdout: stdout, done: make(chan struct{}), stopped: make(chan struct{})}
+	p := &Process{Manifest: m, cmd: cmd, stdin: stdin, stdout: stdout, done: make(chan struct{}), stopped: make(chan struct{}), StartedAt: time.Now(), stderr: tail}
 	go func() { p.waitErr = cmd.Wait(); p.ready.Store(false); close(p.done) }()
 	cleanup := true
 	defer func() {
@@ -204,14 +221,14 @@ func Start(ctx context.Context, m manifest.Manifest, config json.RawMessage) (*P
 	api := pb.NewLifecycleClient(conn)
 	info, e := api.Handshake(startCtx, &pb.Hello{ApiVersion: sdk.APIVersion, GatewayVersion: sdk.GatewayVersion, Capabilities: sdk.HostCapabilities})
 	if e != nil {
-		return nil, fmt.Errorf("handshake %s: %w", m.ID, e)
+		return nil, fmt.Errorf("handshake %s: RPC %s", m.ID, status.Code(e))
 	}
 	if info.Id != m.ID || info.Version != m.Version || info.ApiVersion != uint32(m.APIVersion) || !same(info.Provides, m.Provides) || !same(info.Capabilities, m.Capabilities) {
 		return nil, fmt.Errorf("handshake identity/version/capabilities mismatch for %s", m.ID)
 	}
 	p.Info = info
 	if _, e = api.Configure(startCtx, &pb.Configuration{Json: config}); e != nil {
-		return nil, fmt.Errorf("configure %s: %w", m.ID, e)
+		return nil, fmt.Errorf("configure %s: RPC %s", m.ID, status.Code(e))
 	}
 	h, e := api.Health(startCtx, &pb.Empty{})
 	if e != nil || !h.GetReady() {
@@ -276,6 +293,16 @@ func (p *Process) Stop(ctx context.Context) {
 			p.stopMonitor()
 			<-p.monitorDone
 		}
+		select {
+		case <-p.done:
+			_ = p.stdin.Close()
+			_ = p.stdout.Close()
+			if p.Conn != nil {
+				_ = p.Conn.Close()
+			}
+			return
+		default:
+		}
 		c, cancel := context.WithTimeout(ctx, 2*time.Second)
 		defer cancel()
 		if p.Conn != nil {
@@ -303,10 +330,15 @@ type Manager struct {
 	manifests map[string]manifest.Manifest
 	configs   map[string]json.RawMessage
 	closed    bool
+	restart   RestartOptions
+	states    map[string]*restartState
+	ctx       context.Context
+	cancel    context.CancelFunc
+	watchers  sync.WaitGroup
 }
 
 func NewManager() *Manager {
-	return &Manager{items: map[string]*Process{}, manifests: map[string]manifest.Manifest{}, configs: map[string]json.RawMessage{}}
+	return NewManagerWithOptions(DefaultRestartOptions())
 }
 func (m *Manager) Start(ctx context.Context, list []manifest.Manifest, configs map[string]json.RawMessage) error {
 	m.ops.Lock()
@@ -336,6 +368,9 @@ func (m *Manager) Start(ctx context.Context, list []manifest.Manifest, configs m
 		m.configs[decl.ID] = configs[decl.ID]
 		m.mu.Unlock()
 	}
+	for _, p := range m.List() {
+		m.watch(p)
+	}
 	return nil
 }
 func (m *Manager) Get(id string) (*Process, error) {
@@ -363,12 +398,26 @@ func (m *Manager) Restart(ctx context.Context, id string) error {
 	m.mu.RLock()
 	p, ok := m.items[id]
 	closed := m.closed
-	decl := m.manifests[id]
-	config := m.configs[id]
 	m.mu.RUnlock()
 	if closed || !ok {
 		return fmt.Errorf("unknown/closed plugin %s", id)
 	}
+	if err := m.replace(ctx, id, p); err != nil {
+		return err
+	}
+	m.mu.Lock()
+	m.states[id] = &restartState{}
+	next := m.items[id]
+	m.mu.Unlock()
+	m.watch(next)
+	return nil
+}
+
+// replace runs under ops and publishes only a fully negotiated/configured process.
+func (m *Manager) replace(ctx context.Context, id string, p *Process) error {
+	m.mu.RLock()
+	decl, config := m.manifests[id], m.configs[id]
+	m.mu.RUnlock()
 	p.Stop(ctx)
 	next, e := Start(ctx, decl, config)
 	if e != nil {
@@ -394,4 +443,10 @@ func (m *Manager) stopAll(ctx context.Context) {
 	m.closed = true
 	m.mu.Unlock()
 }
-func (m *Manager) Close(ctx context.Context) { m.ops.Lock(); defer m.ops.Unlock(); m.stopAll(ctx) }
+func (m *Manager) Close(ctx context.Context) {
+	m.cancel()
+	m.ops.Lock()
+	m.stopAll(ctx)
+	m.ops.Unlock()
+	m.watchers.Wait()
+}

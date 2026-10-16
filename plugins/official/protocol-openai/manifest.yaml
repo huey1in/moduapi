@@ -8,7 +8,7 @@ runtime:
 provides: [protocol]
 requires:
   gateway: ">=0.1.0 <1.0.0"
-capabilities: [streaming, usage]
+capabilities: [streaming, usage, affinity]
 permissions:
   network: []
   storage: []

@@ -47,6 +47,30 @@ func TestSemanticVersions(t *testing.T) {
 		}
 	}
 }
+
+func TestInterpreterDeclaration(t *testing.T) {
+	for _, command := range []string{"plugin.py", "./plugin.py", "scripts/main.py"} {
+		m := valid()
+		m.Runtime = Runtime{Type: "interpreter", Interpreter: "python", Command: command}
+		if e := m.Validate(); e != nil {
+			t.Fatal(e)
+		}
+	}
+	for _, command := range []string{"../plugin.py", "/plugin.py", "C:/plugin.py", "./a/../../plugin.py"} {
+		m := valid()
+		m.Runtime = Runtime{Type: "interpreter", Interpreter: "python", Command: command}
+		if m.Validate() == nil {
+			t.Fatal(command)
+		}
+	}
+	for _, interpreter := range []string{"", "./python", "../python", "python -c"} {
+		m := valid()
+		m.Runtime = Runtime{Type: "interpreter", Interpreter: interpreter, Command: "plugin.py"}
+		if m.Validate() == nil {
+			t.Fatal(interpreter)
+		}
+	}
+}
 func TestDiscoveryAndStrictYAML(t *testing.T) {
 	root := t.TempDir()
 	source, e := os.ReadFile(filepath.Join("..", "..", "plugins", "official", "scheduler-single", "manifest.yaml"))

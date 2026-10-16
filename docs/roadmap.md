@@ -1,31 +1,43 @@
 # Current limits and next milestones
 
-The first slice implements the kernel boundary and real process-based JSON/SSE traffic. The following work is deliberately explicit rather than implied by SDK type names.
+Phase 2 adds a tested language-neutral contract, independent Python reference,
+generic advanced scheduler, bounded process supervision and private diagnostics.
+Phase 1's kernel/runtime/SPI boundaries remain intact. No business system was added.
 
 ## Current technical debt
 
-| Area | Limit today |
+| Area | Remaining limit |
 |---|---|
-| SPI | Stable namespaced v1 for protocol/upstream/scheduler only; other kinds have names/experimental Go sketches, no runnable wire services |
-| Runtime | Manual `Manager.Restart`, no automatic bounded backoff, operator restart CLI, installation/update/signature flow or hot reload |
-| Security | Trusted processes under host OS user; cooperative network check and env grants; no OS sandbox or hostile-local-user protection |
-| Diagnostics | Host emits safe generic failures; child stderr is discarded; no bounded structured plugin log/event stream |
-| Scheduling | Single and local round robin; no priority-weighted/health/sticky/concurrency queue plugin yet; no distributed state |
-| Leases | Report is best effort; future reservation plugins must expire/recover leases, including cancelled Select calls |
-| Config | Root schema declarations are validated; full JSON Schema is not; per-upstream plugin config errors surface on use |
-| Streaming | SSE LF/CRLF and raw HTTP bodies; no WebSocket, resumption or lossless cross-protocol conversion |
-| Bodies | Ingress buffered at 4MiB by default (8MiB max); JSON response observation at 4MiB; 1MiB SSE line/event limit; no disk spooling |
-| Usage | Best effort token observation only; no persistence, billing, full-drain-after-disconnect or delivery guarantees |
-| Performance | No capacity claim or benchmark baseline yet; gRPC copies bodies, response transformation adds an IPC leg; measure before optimizing |
-| Language/platforms | Go plugins tested locally on Windows; CI configured for Windows/Linux; Rust/Node/Python interoperability not yet exercised |
-| Distribution | No project LICENSE chosen by the owner, public version release, installer, signing or SBOM yet |
+| SPI | Protocol/upstream/scheduler only; future kinds remain names/sketches |
+| Validation | No additive ValidateConfiguration RPC/full JSON Schema; per-upstream config validated on use |
+| Admission | Snapshot + reservations deliberately double-count active overlap; no begin/ack RPC |
+| Leases | Best-effort Report; TTL must exceed maximum request lifetime; lost responses recover by expiry |
+| State | Health/sticky/reservations local to scheduler process; reset on restart; no durability/distribution |
+| Performance | Linear parsing/scanning and one scheduler mutex; allocations grow with candidate count; IPC costs separate |
+| Recovery | Startup failure stops automatic recovery; fixed daemon defaults, embedder-configurable options; no operator control RPC/CLI |
+| Readiness | All installed bundles required; no optional-plugin dependency graph |
+| Diagnostics | Closed-vocabulary stderr tail only; no arbitrary traceback/body collection or event delivery guarantees |
+| Security | Trusted processes/interpreters under host user; cooperative grants, no OS sandbox/signatures |
+| Protocol | JSON/SSE only; no WebSocket, resumption or lossless cross-protocol translation |
+| Bodies | Bounded ingress buffering, 4MiB JSON observation, 1MiB SSE event/line; no spooling |
+| Usage | Best effort; immediate disconnect cancellation, no durable events/billing |
+| Platforms | Go↔Go and Go↔Python verified locally on Windows; Linux/Windows CI configured, no Rust/Node reference yet |
+| Release | Owner must choose project LICENSE; no signed packages, installer, SBOM or public release process |
 
-## Recommended next stage
+## Next stage
 
-1. Build a small cross-language conformance suite and a Python or Rust reference plugin. Freeze tested stream ownership, error details, unknown-field compatibility, shutdown and negotiation behavior before expanding the SPI.
-2. Add **one** scheduler plugin implementing priority tiers, within-tier weight and health feedback, with explicit eligibility, cancellation, bounded reservations and sticky escape tests. Keep its formulas and state outside Core. Add weighted distribution tests and fault injection.
-3. Add runtime operator diagnostics and bounded restart/backoff with crash-loop protection; make drain/replacement behavior observable. Introduce a generic plugin config validation RPC so upstream/protocol options fail before traffic.
-4. Design the authenticator process API and a minimal env-secret broker. Keep credentials, identity policy and user/API-key management outside the kernel. Do not expand into billing or UI to make the demo look complete.
-5. Benchmark JSON and SSE with concurrency, slow readers, long streams, provider disconnects and cancellation storms. Track allocations, first-byte latency, goroutines, file descriptors and reuse. Use the evidence to choose request streaming/spooling, fewer IPC body copies or pooling changes.
+1. Review the measured contract/admission limits. Design an **optional additive**
+   configuration validation RPC with UNIMPLEMENTED fallback and a lease activation
+   acknowledgement if measured capacity utilization justifies it. Preserve v1 peers.
+2. Specify independent Auth/Secret/Middleware/Usage wire contracts, with one narrow
+   reference implementation at a time. Credential acquisition and identity policy
+   remain outside the kernel; no users, billing, quota, database or admin dependency.
+3. Extend end-to-end benchmarks to JSON/SSE latency, backpressure, cancellation
+   storms, file descriptors and pool reuse. Existing scheduler benchmarks measure
+   local policy, not gateway throughput. Optimize only demonstrated bottlenecks.
+4. Add Rust/Node conformance against the same wire semantics before packaging or a
+   marketplace. Threat-model OS sandboxing, interpreter pinning, signatures and
+   scoped host services separately. Do not advertise process isolation as a sandbox.
 
-OS containment, signatures and secret/storage permissions need an explicit threat model and platform implementation before installing untrusted plugins. PostgreSQL, Redis, admin, users, payments and billing remain optional future plugins; none is a prerequisite for the next slice.
+Distribution/Admin remain later phases. PostgreSQL, Redis, account pools, OAuth,
+quota and billing are neither implemented nor prerequisites for a functioning kernel.

@@ -7,6 +7,12 @@ Read on 2026-10-16, pinned to:
 
 These are observations about engineering constraints, not imported implementations. No source, DTOs, generated contracts, dependencies, or assets from either repository are included. ModuAPI's contract and code are independently written. The project's own license is deliberately left for its owner to choose.
 
+Phase 2 rechecked both GitHub HEADs on the same date; the pinned revisions remain
+current. The scheduling constraints and explicit differences are documented in
+[scheduling lessons](research/scheduling-lessons.md) and the
+[scheduler design](design/scheduler.md). No upstream historical compatibility or
+account/quota logic was transplanted.
+
 ## New API
 
 Files read: `router/relay-router.go`, `middleware/distributor.go`, `middleware/body_cleanup.go`, `controller/relay.go`, `model/channel.go`, `model/channel_cache.go`, `service/channel.go`, `service/channel_affinity.go`, `common/body_storage.go`, `relay/channel/adapter.go`, `relay/channel/api_request.go`, `relay/channel/openai/adaptor.go`, `relay/helper/stream_scanner.go`, `relay/common/stream_status.go`, `relaykit/README.md`, `relaykit/dto/request_common.go`, `relaykit/relayconvert/convmeta/meta.go`.

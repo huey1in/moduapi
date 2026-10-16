@@ -1,6 +1,6 @@
 # Plugin developer guide
 
-The source of truth is [`proto/moduapi/plugin/v1/plugin.proto`](../proto/moduapi/plugin/v1/plugin.proto). The Go SDK is in `sdk/`; committed generated Go bindings are in `gen/plugin/v1/`. The four official plugins are complete executable examples. The host does not import their implementations.
+The source of truth is [`proto/moduapi/plugin/v1/plugin.proto`](../proto/moduapi/plugin/v1/plugin.proto). The Go SDK is in `sdk/`; committed generated Go bindings are in `gen/plugin/v1/`. The five official plugins are complete executable examples. The host does not import their implementations.
 
 ## Bundle and manifest
 
@@ -96,7 +96,7 @@ Compile into a bundle directory with a matching manifest; copy it under the conf
 
 The host sends API version, gateway version and offered capabilities. Return your exact manifest identity, version, provides and supported negotiated capabilities. Every declared capability must be supported by both sides; unknown mandatory capabilities fail startup. V1 offers `streaming`, `usage` and `affinity`; the latter is an extension contract, not an installed sticky implementation. Protocol descriptions declare method/path/protocol endpoints. Endpoint collisions and declarations from non-protocol plugins fail boot.
 
-`Configure` receives an opaque JSON object once. Return an error to reject it. `Health` returns readiness after configure. The host polls every five seconds. A shutdown RPC starts draining, acknowledges, waits for existing calls and exits; the host kills/reaps after two seconds. On failed startup there is no drain period. `Manager.Restart` is explicit and requires unchanged description/bindings. There is no automatic restart command or background restart loop in the CLI yet.
+`Configure` receives an opaque JSON object once. Return an error to reject it. `Health` returns readiness after configure. The host polls every five seconds. A shutdown RPC starts draining, acknowledges, waits for existing calls and exits; the host kills/reaps after two seconds. On failed startup there is no drain period. `Manager.Restart` is explicit and requires unchanged description/bindings. Unexpected ready-process exits now receive bounded automatic recovery with crash-loop protection. There is no operator restart CLI/control API yet.
 
 Generate client/server bindings with the language's official protobuf/gRPC tools. Rust/Node/Python can implement this protocol without linking Go. Only the Go SDK/examples are delivered in this slice; cross-language conformance still needs a test fixture. Do not rename/reuse existing field numbers; additive optional fields keep v1 compatible, incompatible changes need a new package/API version.
 
@@ -127,7 +127,7 @@ Failures distinguish local rejection, upstream HTTP, transport, protocol, downst
 
 ## Frame and stream contract
 
-- Exactly one start with HTTP status 200–599, followed by nonempty data chunks of at most 32KiB, then exactly one end. A failure may terminate before or after start. EOF without a terminal is failure.
+- Exactly one start with HTTP status 200–599, followed by data chunks of 0..32KiB, then exactly one end. A failure may terminate before or after start. EOF without a terminal is failure.
 - RPC messages are limited to 10MiB; ingress bodies are separately capped at at most 8MiB. Header/metadata overhead counts toward the RPC cap.
 - `Send` returning success means the bytes were accepted by the RPC stack. Do not mutate a frame concurrently with Send. Reusing a buffer after synchronous Send returns is supported by the Go implementation.
 - `end.usage` or `failure.usage` carries observed tokens; failures and disconnects can be partial. Core emits a lifecycle usage event but does not price, charge, persist or promise durable delivery.
@@ -150,8 +150,8 @@ protocol_config:
   model_mapping:
     public-model: upstream-model
 metadata:
-  priority: "10"
-  weight: "3"
+  moduapi.scheduler.priority: "10"
+  moduapi.scheduler.weight: "3"
 ```
 
 The HTTP plugin owns `base_url`, `api_key_env` and `headers`. The OpenAI protocol owns `model_mapping`. The base URL must be HTTP(S), without userinfo/query/fragment; redirects are not followed. Network globs are hostnames, without port or scheme; `*.example.com` matches subdomains, not the apex. The demo grants `*` to the HTTP plugin so localhost and arbitrary compatible deployments work. Restrict deployment grants explicitly. No ambient proxy environment is inherited or used. All configured upstreams share this process's transport limits.
@@ -165,3 +165,37 @@ The host inherits only basic OS executable/temp variables (`SystemRoot`, `WINDIR
 `permissions.network` is passed as JSON in `MODUAPI_NETWORK_PERMISSIONS`; the official HTTP plugin checks the configured target hostname against it. This check is cooperative. The host does not intercept arbitrary plugin sockets, filesystem calls or subprocesses. Storage permission namespaces are declared/validated only; no storage broker exists. There is no filesystem/network namespace, seccomp, job object, container, resource cgroup, mTLS, package signing or binary checksum verification in this phase. Code running under the host OS user can access that user's resources despite the manifest.
 
 Do not advertise these declarations as enforcement for untrusted binaries. Stronger enforcement and scoped host secret/storage brokers require separate ADRs and platform work. Current limits and priorities are in [the roadmap](roadmap.md).
+
+## Phase 2 contract and reference implementation
+
+The normative [v1 contract](plugin-contract.md) supplements this guide: terminal
+frames require actual RPC EOF, empty data frames are legal, and status fallbacks
+preserve cancellation/timeout/local/plugin distinctions. No protobuf service/field
+was changed. The independent [Python reference](../tests/conformance/python/README.md)
+and `make conformance` exercise all services without a Go SDK dependency.
+
+Interpreter example:
+
+```yaml
+runtime:
+  type: interpreter
+  interpreter: /opt/moduapi/python-venv/bin/python
+  command: plugin.py
+  args: []
+```
+
+A bare interpreter name resolves through PATH; scripts remain inside their package.
+Native command containment remains unchanged. No shell or interpreter flags are
+embedded in the interpreter name. Pin the interpreter environment in deployments.
+
+The [advanced scheduler](design/scheduler.md) owns all policy/state and recognizes
+only namespaced generic hints. `X-Moduapi-Affinity` is an optional OpenAI protocol
+ingress hint, not an identity credential, and is never forwarded upstream.
+
+Runtime embedders may use `NewManagerWithOptions(RestartOptions)` and
+`Manager.Diagnostics(id)` for ready/failed/PID/uptime/restarts/safe stderr tail.
+CLI inspect remains offline manifest inspection; there is no daemon control socket.
+The 64KiB stderr tail accepts only JSON `{event, code?}` with events startup, ready,
+draining, stopped, failed and codes config_rejected, transport_error, protocol_error,
+cancelled, timeout, internal_error, crash (or omitted). Other fields/text are dropped.
+Never put sensitive material in any log channel.

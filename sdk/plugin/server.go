@@ -9,6 +9,8 @@ import (
 	"io"
 	"net"
 	"os"
+	"strings"
+	"sync"
 	"sync/atomic"
 
 	pb "github.com/huey1in/moduapi/gen/plugin/v1"
@@ -32,13 +34,17 @@ type server struct {
 	pb.UnimplementedProtocolServer
 	pb.UnimplementedUpstreamServer
 	pb.UnimplementedSchedulerServer
-	def   Definition
-	ready atomic.Bool
-	stop  chan struct{}
+	def      Definition
+	ready    atomic.Bool
+	draining atomic.Bool
+	configMu sync.Mutex
+	stop     chan struct{}
 }
 
 // Run reserves stdout for one bounded bootstrap record. Log only to stderr.
 func Run(def Definition) error {
+	diagnostic("startup", "")
+	defer diagnostic("stopped", "")
 	token := os.Getenv("MODUAPI_PLUGIN_TOKEN")
 	if len(token) < 32 {
 		return fmt.Errorf("plugin must be launched by a host")
@@ -62,11 +68,17 @@ func Run(def Definition) error {
 			if err := auth(ctx); err != nil {
 				return nil, err
 			}
+			if !strings.Contains(info.FullMethod, ".Lifecycle/") && (!s.ready.Load() || s.draining.Load()) {
+				return nil, status.Error(codes.Unavailable, "plugin is not accepting work")
+			}
 			return next(ctx, req)
 		}),
 		grpc.StreamInterceptor(func(srv any, stream grpc.ServerStream, info *grpc.StreamServerInfo, next grpc.StreamHandler) error {
 			if err := auth(stream.Context()); err != nil {
 				return err
+			}
+			if !s.ready.Load() || s.draining.Load() {
+				return status.Error(codes.Unavailable, "plugin is not accepting work")
 			}
 			return next(srv, stream)
 		}))
@@ -111,6 +123,11 @@ func (s *server) Handshake(ctx context.Context, h *pb.Hello) (*pb.Description, e
 	return r, nil
 }
 func (s *server) Configure(ctx context.Context, c *pb.Configuration) (*pb.Empty, error) {
+	s.configMu.Lock()
+	defer s.configMu.Unlock()
+	if s.draining.Load() {
+		return nil, status.Error(codes.Unavailable, "plugin is draining")
+	}
 	if s.ready.Load() {
 		return nil, status.Error(codes.FailedPrecondition, "already configured")
 	}
@@ -127,18 +144,28 @@ func (s *server) Configure(ctx context.Context, c *pb.Configuration) (*pb.Empty,
 		}
 	}
 	s.ready.Store(true)
+	diagnostic("ready", "")
 	return &pb.Empty{}, nil
 }
 func (s *server) Health(context.Context, *pb.Empty) (*pb.HealthStatus, error) {
-	return &pb.HealthStatus{Ready: s.ready.Load()}, nil
+	return &pb.HealthStatus{Ready: s.ready.Load() && !s.draining.Load()}, nil
 }
 func (s *server) Shutdown(context.Context, *pb.Empty) (*pb.Empty, error) {
+	s.draining.Store(true)
+	diagnostic("draining", "")
 	s.ready.Store(false)
 	select {
 	case s.stop <- struct{}{}:
 	default:
 	}
 	return &pb.Empty{}, nil
+}
+
+func diagnostic(event, code string) {
+	_ = json.NewEncoder(os.Stderr).Encode(struct {
+		Event string `json:"event"`
+		Code  string `json:"code,omitempty"`
+	}{event, code})
 }
 func wireError(err error) error {
 	if err == nil {
@@ -182,7 +209,8 @@ func (s *server) Transform(stream grpc.BidiStreamingServer[pb.TransformInput, pb
 		}
 		return v.GetFrame(), nil
 	}
-	if err := s.def.Protocol.Transform(stream.Context(), r, recv, stream.Send); err != nil {
+	guard := sdk.GuardStream(sdk.Stream{Recv: recv, Close: func() {}})
+	if err := s.def.Protocol.Transform(stream.Context(), r, guard.Recv, stream.Send); err != nil {
 		return stream.Send(sdk.Failed(sdk.FailureOf(err)))
 	}
 	return nil

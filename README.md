@@ -4,7 +4,7 @@
 
 ModuAPI keeps the HTTP runtime small and runs protocol, upstream and scheduling implementations as independent processes. Install only the capabilities you need. The kernel starts without a database, Redis, users, authentication management, billing or an admin UI.
 
-This repository contains the first runnable vertical slice: OpenAI Chat Completions → router → scheduler → generic HTTP upstream → JSON/SSE. It is an initial implementation, not a production hardening claim.
+Phase 2 preserves the first runnable vertical slice and hardens its cross-language contract: OpenAI Chat Completions → router → scheduler → generic HTTP upstream → JSON/SSE. It is an initial implementation, not a production hardening claim.
 
 ## Run locally
 
@@ -77,7 +77,7 @@ upstreams:
       base_url: "http://127.0.0.1:9090/v1"
 ```
 
-Core owns wiring; `upstreams.*.config` belongs to its upstream plugin and `protocol_config` belongs to the selected protocol plugin. Bundle paths resolve relative to the configuration file. Routes match in order, with exact model names or `*`. Priority/weight metadata is available to scheduler plugins; the included single/round-robin schedulers do not implement weighting.
+Core owns wiring; `upstreams.*.config` belongs to its upstream plugin and `protocol_config` belongs to the selected protocol plugin. Bundle paths resolve relative to the configuration file. Routes match in order, with exact model names or `*`. The optional `scheduler.priority-weight-health` implements priority, proportional weights, health feedback, capacity leases and soft sticky sessions; the original single/round-robin plugins remain available. See [the scheduler design](docs/design/scheduler.md) and `examples/advanced.yaml`.
 
 For a real OpenAI-compatible service, change the HTTP plugin's `base_url` and set `config.api_key_env: OPENAI_API_KEY`. Add `env:OPENAI_API_KEY` to `permissions.secrets` in **the installed** `dist/plugins/upstream.http/manifest.yaml`, and set that variable in the shell launching the host. Restrict its network permission to the target hostname. Builds overwrite installed demo manifests, so keep deployment bundles separately. Incoming Authorization/Cookie headers are not forwarded as upstream credentials.
 
@@ -91,7 +91,7 @@ go run ./cmd/moduapi plugin inspect dist/plugins/protocol.openai
 go run ./cmd/moduapi plugin validate dist/plugins/upstream.http
 ```
 
-These commands inspect manifests without running plugin code. `serve` discovers the installed bundles, validates them, starts processes, checks handshake/configuration/health, validates registry references and then serves requests. A failed boot cleans up already-started children.
+These commands inspect manifests without running plugin code. `serve` discovers the installed bundles, validates them, starts processes, checks handshake/configuration/health, validates registry references and then serves requests. A failed boot cleans up already-started children. Ready plugins that crash unexpectedly get bounded exponential restart with crash-loop protection. `/readyz` remains unavailable until required plugins recover; `/healthz` reflects kernel liveness.
 
 The v1 API contains Lifecycle, Protocol, Upstream and Scheduler services. The SDK reserves other plugin kind names; those services are not implemented yet. Process isolation **does not provide a security sandbox**. See [the developer guide](docs/plugin-development.md) for permissions, lifecycle and cross-language implementation details.
 
@@ -101,17 +101,23 @@ The v1 API contains Lifecycle, Protocol, Upstream and Scheduler services. The SD
 go test ./...
 go test -race ./...
 go vet ./...
+make conformance # Python 3.11+, isolated pinned virtualenv
+# Portable equivalent: go run ./tools/conformance
 ```
 
-Integration tests build and launch the four actual plugin binaries, use local mock HTTP servers, and instrument child binaries during the race run. They cover streaming before completion, cancellation, deadlines, replay opt-in, failure isolation, negotiation, environment grants, cleanup and restart. Tests do not call OpenAI or Anthropic.
+Integration tests build and launch the five actual plugin binaries, use local mock HTTP servers, and instrument child binaries during the race run. They cover streaming before completion, cancellation, deadlines, replay opt-in, failure isolation, negotiation, environment grants, cleanup and restart. Tests do not call OpenAI or Anthropic.
 
 ## Design and next work
 
 - [Architecture and lifecycle](docs/architecture.md)
-- [Plugin developer guide and wire contract](docs/plugin-development.md)
+- [Plugin developer guide](docs/plugin-development.md)
+- [Formal v1 plugin contract](docs/plugin-contract.md)
+- [Advanced scheduler design](docs/design/scheduler.md)
+- [Scheduling lessons](docs/research/scheduling-lessons.md)
 - [Pinned New API / Sub2API source research](docs/research.md)
 - [Architecture decisions](docs/adr/0001-core-boundary.md)
 - [Current limitations and next milestones](docs/roadmap.md)
 - [Phase 1 validation results](docs/validation.md)
+- [Phase 2 validation and benchmark results](docs/validation-phase2.md)
 
 Only gRPC, protobuf and YAML parsing are direct dependencies. No code or generated contracts from New API/Sub2API are included. The repository owner still needs to choose ModuAPI's distribution license before a public release.

@@ -66,7 +66,14 @@ func FailureOf(err error) *Failure {
 func Start(status int, headers http.Header) *Frame {
 	return &Frame{Value: &pb.Frame_Start{Start: &pb.ResponseStart{Status: int32(status), Headers: Headers(headers)}}}
 }
-func Data(b []byte) *Frame     { return &Frame{Value: &pb.Frame_Data{Data: b}} }
+func Data(b []byte) *Frame { return &Frame{Value: &pb.Frame_Data{Data: b}} }
+func IsData(f *Frame) bool {
+	if f == nil {
+		return false
+	}
+	_, ok := f.Value.(*pb.Frame_Data)
+	return ok
+}
 func End(u *Usage) *Frame      { return &Frame{Value: &pb.Frame_End{End: &pb.ResponseEnd{Usage: u}}} }
 func Failed(f *Failure) *Frame { return &Frame{Value: &pb.Frame_Failure{Failure: f}} }
 func Headers(h http.Header) map[string]*pb.Values {

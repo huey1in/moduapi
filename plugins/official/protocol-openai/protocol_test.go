@@ -38,7 +38,7 @@ func TestFragmentedSSEUsageAndTerminal(t *testing.T) {
 		{"unterminated event", "data: [DONE]\n", false},
 	} {
 		t.Run(tc.name, func(t *testing.T) {
-			frames := []*sdk.Frame{sdk.Start(200, http.Header{"Content-Type": []string{"text/event-stream"}})}
+			frames := []*sdk.Frame{sdk.Start(200, http.Header{"Content-Type": []string{"text/event-stream"}}), sdk.Data(nil)}
 			for _, b := range []byte(tc.data) {
 				frames = append(frames, sdk.Data([]byte{b}))
 			}
