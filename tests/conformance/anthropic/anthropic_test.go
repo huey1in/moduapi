@@ -22,6 +22,10 @@ import (
 
 func copyFile(t *testing.T, from, to string) {
 	t.Helper()
+	info, err := os.Stat(from)
+	if err != nil {
+		t.Fatal(err)
+	}
 	b, err := os.ReadFile(from)
 	if err != nil {
 		t.Fatal(err)
@@ -29,7 +33,7 @@ func copyFile(t *testing.T, from, to string) {
 	if err = os.MkdirAll(filepath.Dir(to), 0755); err != nil {
 		t.Fatal(err)
 	}
-	if err = os.WriteFile(to, b, 0644); err != nil {
+	if err = os.WriteFile(to, b, info.Mode().Perm()); err != nil {
 		t.Fatal(err)
 	}
 }
