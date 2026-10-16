@@ -1,4 +1,10 @@
-# Scheduler baseline (Phase 2)
+# Benchmarks
+
+Start with the [end-to-end audit](end-to-end.md) for real JSON/SSE requests,
+process/resource counts and gateway-added latency. Scheduler-only timings below
+exclude HTTP, RPC and streaming and cannot establish the cost of the gateway.
+
+## Scheduler baseline (Phase 2)
 
 Measured locally on 2026-10-16, Windows/amd64, Go 1.27.2, Intel i9-14900HX,
 GOMAXPROCS=32, no race instrumentation. [Complete output](windows-amd64.txt) includes

@@ -1,5 +1,11 @@
 # ModuAPI process contract v1
 
+Positioning scope: these are three typed component services, not a promise to grow
+a business PluginKind platform. One package/process may provide multiple services;
+service separation does not require one process per role. Plugins are trusted
+operator-installed code, not untrusted downloads. [ADR 0009](adr/0009-moduapi-positioning.md)
+freezes kind expansion while preserving the v1 semantics below.
+
 Status: tested v1 baseline, 2026-10-16. The normative wire definition is
 [`plugin.proto`](../proto/moduapi/plugin/v1/plugin.proto). Go helpers are optional.
 The independent [Python fixture](../tests/conformance/python/plugin.py) imports

@@ -1,6 +1,13 @@
 # ModuAPI
 
-**A lightweight, plugin-first AI API gateway.**
+**An experimental kernel for composing AI HTTP gateways.**
+
+**Positioning review:** the current project is an experimental **AI HTTP gateway
+construction kernel**. “Lightweight” describes its small mandatory business-domain
+surface; it is not a latency, memory or single-binary deployment claim. New plugin
+kinds and Auth/Secret/Middleware/Usage are paused for [architecture validation](docs/roadmap.md).
+Read the [source audit](docs/research/competitive-architecture-audit.md),
+[E2E measurements](docs/benchmarks/end-to-end.md) and [ADR 0009](docs/adr/0009-moduapi-positioning.md).
 
 ModuAPI keeps the HTTP runtime small and runs protocol, upstream and scheduling implementations as independent processes. Install only the capabilities you need. The kernel starts without a database, Redis, users, authentication management, billing or an admin UI.
 

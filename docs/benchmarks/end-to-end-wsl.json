@@ -1,0 +1,336 @@
+{
+  "Baseline": "a3f011d405785886a5c723979d28b9ec78f61739",
+  "Go": "go1.27.2",
+  "OS": "linux",
+  "Arch": "amd64",
+  "CPU": "Intel(R) Core(TM) i9-14900HX",
+  "LogicalCPUs": 32,
+  "GOMAXPROCS": 32,
+  "StartedUTC": "2026-10-16T12:15:44Z",
+  "Options": {
+    "Role": "run",
+    "Bundles": "/mnt/host/c/Users/29269/Downloads/moduapi/dist/audit-linux/plugins",
+    "Scheduler": "scheduler.single",
+    "Upstream": "",
+    "Out": "/mnt/host/c/Users/29269/Downloads/moduapi/docs/benchmarks/end-to-end-wsl.json",
+    "Concurrency": "16",
+    "Duration": 5000000000,
+    "Warmup": 1000000000,
+    "Repeats": 1,
+    "Build": false
+  },
+  "Results": [
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 44446,
+      "Errors": 0,
+      "Seconds": 5.003606593,
+      "RPS": 8882.792676422552,
+      "TotalMS": {
+        "P50": 1.760379,
+        "P95": 2.402784,
+        "P99": 2.749246
+      },
+      "FirstMS": {
+        "P50": 1.740412,
+        "P95": 2.37481,
+        "P99": 2.716877
+      },
+      "ResidualMS": {
+        "P50": 0.312127,
+        "P95": 0.819048,
+        "P99": 1.08573
+      },
+      "FirstResidualMS": {
+        "P50": 0.296657,
+        "P95": 0.780282,
+        "P99": 1.036863
+      },
+      "CPUSeconds": 5.33,
+      "CPUCores": 1.0652316286129733,
+      "PeakRSSBytes": 18903040,
+      "PeakDescriptors": 23,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 1,
+      "HostGoroutinesIdle": 20,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 15955,
+      "Errors": 0,
+      "Seconds": 5.004938948,
+      "RPS": 3187.8510738628893,
+      "TotalMS": {
+        "P50": 4.961913,
+        "P95": 6.302144,
+        "P99": 6.999757
+      },
+      "FirstMS": {
+        "P50": 4.949132,
+        "P95": 6.288286,
+        "P99": 6.981956
+      },
+      "ResidualMS": {
+        "P50": 3.621694,
+        "P95": 4.81573,
+        "P99": 5.42929
+      },
+      "FirstResidualMS": {
+        "P50": 3.609081,
+        "P95": 4.801468,
+        "P99": 5.416789
+      },
+      "CPUSeconds": 38.970000000000006,
+      "CPUCores": 7.786308765179368,
+      "PeakRSSBytes": 78876672,
+      "PeakDescriptors": 75,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 77,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 15547,
+      "Errors": 0,
+      "Seconds": 5.005095546,
+      "RPS": 3106.2344079375143,
+      "TotalMS": {
+        "P50": 5.059866,
+        "P95": 6.574563,
+        "P99": 7.41564
+      },
+      "FirstMS": {
+        "P50": 5.046686,
+        "P95": 6.56225,
+        "P99": 7.396723
+      },
+      "ResidualMS": {
+        "P50": 3.723393,
+        "P95": 5.0902,
+        "P99": 5.871226
+      },
+      "FirstResidualMS": {
+        "P50": 3.710149,
+        "P95": 5.074289,
+        "P99": 5.855157
+      },
+      "CPUSeconds": 39.28,
+      "CPUCores": 7.848002028930699,
+      "PeakRSSBytes": 82833408,
+      "PeakDescriptors": 75,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 87,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 13430,
+      "Errors": 0,
+      "Seconds": 5.005544843,
+      "RPS": 2683.0246099545334,
+      "TotalMS": {
+        "P50": 5.809601,
+        "P95": 7.915787,
+        "P99": 9.531017
+      },
+      "FirstMS": {
+        "P50": 5.793071,
+        "P95": 7.896091,
+        "P99": 9.518259
+      },
+      "ResidualMS": {
+        "P50": 4.450578,
+        "P95": 6.456968,
+        "P99": 7.98588
+      },
+      "FirstResidualMS": {
+        "P50": 4.435495,
+        "P95": 6.435464,
+        "P99": 7.950971
+      },
+      "CPUSeconds": 40.690000000000005,
+      "CPUCores": 8.128985210651525,
+      "PeakRSSBytes": 78131200,
+      "PeakDescriptors": 75,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 79,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 13529,
+      "Errors": 0,
+      "Seconds": 5.003077506,
+      "RPS": 2704.1356012924416,
+      "TotalMS": {
+        "P50": 5.830719,
+        "P95": 6.788335,
+        "P99": 7.4202
+      },
+      "FirstMS": {
+        "P50": 1.495842,
+        "P95": 2.068384,
+        "P99": 2.56757
+      },
+      "ResidualMS": {
+        "P50": 0.214509,
+        "P95": 0.543217,
+        "P99": 0.813051
+      },
+      "FirstResidualMS": {
+        "P50": 0.223845,
+        "P95": 0.548478,
+        "P99": 0.811665
+      },
+      "CPUSeconds": 2.8800000000000003,
+      "CPUCores": 0.5756456893874072,
+      "PeakRSSBytes": 18714624,
+      "PeakDescriptors": 23,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 1,
+      "HostGoroutinesIdle": 20,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 9030,
+      "Errors": 0,
+      "Seconds": 5.007549611,
+      "RPS": 1803.277191735445,
+      "TotalMS": {
+        "P50": 8.787846,
+        "P95": 10.600096,
+        "P99": 11.404671
+      },
+      "FirstMS": {
+        "P50": 4.53121,
+        "P95": 6.012089,
+        "P99": 6.753411
+      },
+      "ResidualMS": {
+        "P50": 3.389914,
+        "P95": 4.900379,
+        "P99": 5.697731
+      },
+      "FirstResidualMS": {
+        "P50": 3.163269,
+        "P95": 4.519344,
+        "P99": 5.219437
+      },
+      "CPUSeconds": 31.889999999999997,
+      "CPUCores": 6.368384235265043,
+      "PeakRSSBytes": 79011840,
+      "PeakDescriptors": 75,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 104,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 8711,
+      "Errors": 0,
+      "Seconds": 5.007511349,
+      "RPS": 1739.5866714789547,
+      "TotalMS": {
+        "P50": 9.084836,
+        "P95": 11.014677,
+        "P99": 12.099592
+      },
+      "FirstMS": {
+        "P50": 4.786371,
+        "P95": 6.358859,
+        "P99": 7.235569
+      },
+      "ResidualMS": {
+        "P50": 3.668201,
+        "P95": 5.327996,
+        "P99": 6.239383
+      },
+      "FirstResidualMS": {
+        "P50": 3.4141,
+        "P95": 4.89857,
+        "P99": 5.756641
+      },
+      "CPUSeconds": 32.940000000000005,
+      "CPUCores": 6.578117892149785,
+      "PeakRSSBytes": 81620992,
+      "PeakDescriptors": 75,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 111,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 9125,
+      "Errors": 0,
+      "Seconds": 5.006175367,
+      "RPS": 1822.7487714774654,
+      "TotalMS": {
+        "P50": 8.673598,
+        "P95": 10.524411,
+        "P99": 11.495652
+      },
+      "FirstMS": {
+        "P50": 4.410288,
+        "P95": 5.886818,
+        "P99": 6.668997
+      },
+      "ResidualMS": {
+        "P50": 3.284934,
+        "P95": 4.751162,
+        "P99": 5.550053
+      },
+      "FirstResidualMS": {
+        "P50": 3.045985,
+        "P95": 4.389233,
+        "P99": 5.04194
+      },
+      "CPUSeconds": 31.139999999999997,
+      "CPUCores": 6.220317451376249,
+      "PeakRSSBytes": 79708160,
+      "PeakDescriptors": 75,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 109,
+      "HostGoroutinesAfter": 31
+    }
+  ]
+}

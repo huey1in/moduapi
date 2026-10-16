@@ -1,0 +1,2832 @@
+{
+  "Baseline": "a3f011d405785886a5c723979d28b9ec78f61739",
+  "Go": "go1.27.2",
+  "OS": "windows",
+  "Arch": "amd64",
+  "CPU": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "LogicalCPUs": 32,
+  "GOMAXPROCS": 32,
+  "StartedUTC": "2026-10-16T11:59:43Z",
+  "Options": {
+    "Role": "run",
+    "Bundles": "C:\\Users\\29269\\Downloads\\moduapi\\dist\\plugins",
+    "Scheduler": "scheduler.single",
+    "Upstream": "",
+    "Out": "docs/benchmarks/end-to-end-windows.json",
+    "Concurrency": "1,16,64",
+    "Duration": 5000000000,
+    "Warmup": 1000000000,
+    "Repeats": 3,
+    "Build": false
+  },
+  "Results": [
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 1,
+      "Requests": 2806,
+      "Errors": 0,
+      "Seconds": 5.0002042,
+      "RPS": 561.1770815279904,
+      "TotalMS": {
+        "P50": 1.6011,
+        "P95": 2.4473,
+        "P99": 4.7418
+      },
+      "FirstMS": {
+        "P50": 1.5781,
+        "P95": 2.4199,
+        "P99": 4.6818
+      },
+      "ResidualMS": {
+        "P50": 0.263,
+        "P95": 0.6914,
+        "P99": 2.4396
+      },
+      "FirstResidualMS": {
+        "P50": 0.2371,
+        "P95": 0.6506,
+        "P99": 2.4081
+      },
+      "CPUSeconds": 0.65625,
+      "CPUCores": 0.13124463996890368,
+      "PeakRSSBytes": 20045824,
+      "PeakDescriptors": 184,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 5,
+      "HostGoroutinesPeak": 6,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 1,
+      "Requests": 960,
+      "Errors": 0,
+      "Seconds": 5.0037711,
+      "RPS": 191.8552988964663,
+      "TotalMS": {
+        "P50": 5.0841,
+        "P95": 6.425,
+        "P99": 7.4901
+      },
+      "FirstMS": {
+        "P50": 5.0524,
+        "P95": 6.3788,
+        "P99": 7.4123
+      },
+      "ResidualMS": {
+        "P50": 3.6407,
+        "P95": 4.7987,
+        "P99": 5.7837
+      },
+      "FirstResidualMS": {
+        "P50": 3.6095,
+        "P95": 4.7632,
+        "P99": 5.7409
+      },
+      "CPUSeconds": 5.78125,
+      "CPUCores": 1.155378590359579,
+      "PeakRSSBytes": 168222720,
+      "PeakDescriptors": 811,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 34,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 1,
+      "Requests": 978,
+      "Errors": 0,
+      "Seconds": 5.0039673,
+      "RPS": 195.44492227197406,
+      "TotalMS": {
+        "P50": 5.047,
+        "P95": 6.2536,
+        "P99": 7.3023
+      },
+      "FirstMS": {
+        "P50": 5.0137,
+        "P95": 6.2278,
+        "P99": 7.2823
+      },
+      "ResidualMS": {
+        "P50": 3.58,
+        "P95": 4.7109,
+        "P99": 5.4983
+      },
+      "FirstResidualMS": {
+        "P50": 3.5455,
+        "P95": 4.6678,
+        "P99": 5.4679
+      },
+      "CPUSeconds": 6.734375,
+      "CPUCores": 1.345807155854116,
+      "PeakRSSBytes": 168046592,
+      "PeakDescriptors": 812,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 34,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 1,
+      "Requests": 979,
+      "Errors": 0,
+      "Seconds": 5.0046644,
+      "RPS": 195.61751233509284,
+      "TotalMS": {
+        "P50": 5.0078,
+        "P95": 6.2453,
+        "P99": 6.9599
+      },
+      "FirstMS": {
+        "P50": 4.9731,
+        "P95": 6.1954,
+        "P99": 6.9339
+      },
+      "ResidualMS": {
+        "P50": 3.5441,
+        "P95": 4.6475,
+        "P99": 5.2946
+      },
+      "FirstResidualMS": {
+        "P50": 3.5134,
+        "P95": 4.5998,
+        "P99": 5.2686
+      },
+      "CPUSeconds": 6.671875,
+      "CPUCores": 1.3331313484276788,
+      "PeakRSSBytes": 170037248,
+      "PeakDescriptors": 815,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 34,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 1,
+      "Requests": 723,
+      "Errors": 0,
+      "Seconds": 5.0009342,
+      "RPS": 144.57298798292527,
+      "TotalMS": {
+        "P50": 6.4929,
+        "P95": 9.3797,
+        "P99": 13.3856
+      },
+      "FirstMS": {
+        "P50": 1.6475,
+        "P95": 3.1866,
+        "P99": 6.2778
+      },
+      "ResidualMS": {
+        "P50": 0.2785,
+        "P95": 1.3474,
+        "P99": 3.3903
+      },
+      "FirstResidualMS": {
+        "P50": 0.3002,
+        "P95": 1.2061,
+        "P99": 3.5954
+      },
+      "CPUSeconds": 0.6875,
+      "CPUCores": 0.13747431429911636,
+      "PeakRSSBytes": 19873792,
+      "PeakDescriptors": 186,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 5,
+      "HostGoroutinesPeak": 6,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 1,
+      "Requests": 451,
+      "Errors": 0,
+      "Seconds": 5.0046213,
+      "RPS": 90.11670873078847,
+      "TotalMS": {
+        "P50": 10.5753,
+        "P95": 14.1512,
+        "P99": 19.4438
+      },
+      "FirstMS": {
+        "P50": 5.0908,
+        "P95": 8.4894,
+        "P99": 11.3145
+      },
+      "ResidualMS": {
+        "P50": 4.1041,
+        "P95": 7.4325,
+        "P99": 10.763
+      },
+      "FirstResidualMS": {
+        "P50": 3.6226,
+        "P95": 6.7101,
+        "P99": 9.4385
+      },
+      "CPUSeconds": 4.234375,
+      "CPUCores": 0.8460929900929767,
+      "PeakRSSBytes": 167747584,
+      "PeakDescriptors": 783,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 1,
+      "Requests": 444,
+      "Errors": 0,
+      "Seconds": 5.0062418,
+      "RPS": 88.68928384561849,
+      "TotalMS": {
+        "P50": 10.7193,
+        "P95": 15.2422,
+        "P99": 17.1037
+      },
+      "FirstMS": {
+        "P50": 5.2084,
+        "P95": 8.0109,
+        "P99": 10.4074
+      },
+      "ResidualMS": {
+        "P50": 4.2996,
+        "P95": 6.997,
+        "P99": 10.0755
+      },
+      "FirstResidualMS": {
+        "P50": 3.7425,
+        "P95": 6.2172,
+        "P99": 8.5726
+      },
+      "CPUSeconds": 4.421875,
+      "CPUCores": 0.8832723581190186,
+      "PeakRSSBytes": 168456192,
+      "PeakDescriptors": 775,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 1,
+      "Requests": 509,
+      "Errors": 0,
+      "Seconds": 5.0057476,
+      "RPS": 101.68311322768251,
+      "TotalMS": {
+        "P50": 9.7465,
+        "P95": 10.9314,
+        "P99": 11.7212
+      },
+      "FirstMS": {
+        "P50": 4.6118,
+        "P95": 5.6177,
+        "P99": 6.4631
+      },
+      "ResidualMS": {
+        "P50": 3.4075,
+        "P95": 4.2588,
+        "P99": 5.1447
+      },
+      "FirstResidualMS": {
+        "P50": 3.1445,
+        "P95": 4.043,
+        "P99": 4.9779
+      },
+      "CPUSeconds": 5.6875,
+      "CPUCores": 1.136193922362366,
+      "PeakRSSBytes": 168402944,
+      "PeakDescriptors": 811,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 34859,
+      "Errors": 0,
+      "Seconds": 5.005594,
+      "RPS": 6964.008667103244,
+      "TotalMS": {
+        "P50": 1.8302,
+        "P95": 5.0323,
+        "P99": 7.3752
+      },
+      "FirstMS": {
+        "P50": 1.7512,
+        "P95": 4.9436,
+        "P99": 7.1267
+      },
+      "ResidualMS": {
+        "P50": 0.6893,
+        "P95": 2.8955,
+        "P99": 5.0047
+      },
+      "FirstResidualMS": {
+        "P50": 0.6175,
+        "P95": 2.7782,
+        "P99": 4.7716
+      },
+      "CPUSeconds": 6.140625,
+      "CPUCores": 1.2267525092926033,
+      "PeakRSSBytes": 28401664,
+      "PeakDescriptors": 365,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 24,
+      "HostGoroutinesPeak": 40,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 12064,
+      "Errors": 0,
+      "Seconds": 5.0054038,
+      "RPS": 2410.1951574816003,
+      "TotalMS": {
+        "P50": 6.5305,
+        "P95": 8.7124,
+        "P99": 9.7861
+      },
+      "FirstMS": {
+        "P50": 6.4974,
+        "P95": 8.6743,
+        "P99": 9.7234
+      },
+      "ResidualMS": {
+        "P50": 5.371,
+        "P95": 7.4695,
+        "P99": 8.5774
+      },
+      "FirstResidualMS": {
+        "P50": 5.3402,
+        "P95": 7.4399,
+        "P99": 8.5362
+      },
+      "CPUSeconds": 43.84375,
+      "CPUCores": 8.75928331696236,
+      "PeakRSSBytes": 142721024,
+      "PeakDescriptors": 1133,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 82,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 12058,
+      "Errors": 0,
+      "Seconds": 5.0060558,
+      "RPS": 2408.682699861236,
+      "TotalMS": {
+        "P50": 6.5025,
+        "P95": 8.7737,
+        "P99": 10.029
+      },
+      "FirstMS": {
+        "P50": 6.4727,
+        "P95": 8.7294,
+        "P99": 9.957
+      },
+      "ResidualMS": {
+        "P50": 5.347,
+        "P95": 7.5011,
+        "P99": 8.6727
+      },
+      "FirstResidualMS": {
+        "P50": 5.3174,
+        "P95": 7.4744,
+        "P99": 8.6037
+      },
+      "CPUSeconds": 43.34375,
+      "CPUCores": 8.658263457630655,
+      "PeakRSSBytes": 142733312,
+      "PeakDescriptors": 1141,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 79,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 12132,
+      "Errors": 0,
+      "Seconds": 5.0053539,
+      "RPS": 2423.8046384692198,
+      "TotalMS": {
+        "P50": 6.477,
+        "P95": 8.7471,
+        "P99": 9.944
+      },
+      "FirstMS": {
+        "P50": 6.4487,
+        "P95": 8.7155,
+        "P99": 9.8593
+      },
+      "ResidualMS": {
+        "P50": 5.3034,
+        "P95": 7.4409,
+        "P99": 8.4592
+      },
+      "FirstResidualMS": {
+        "P50": 5.2744,
+        "P95": 7.4132,
+        "P99": 8.4324
+      },
+      "CPUSeconds": 44.28125,
+      "CPUCores": 8.846777048072465,
+      "PeakRSSBytes": 140873728,
+      "PeakDescriptors": 1153,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 81,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 11640,
+      "Errors": 0,
+      "Seconds": 5.0081297,
+      "RPS": 2324.220956178511,
+      "TotalMS": {
+        "P50": 6.277,
+        "P95": 10.953,
+        "P99": 13.6521
+      },
+      "FirstMS": {
+        "P50": 1.6715,
+        "P95": 4.9035,
+        "P99": 7.0482
+      },
+      "ResidualMS": {
+        "P50": 0.5872,
+        "P95": 2.9491,
+        "P99": 5.0072
+      },
+      "FirstResidualMS": {
+        "P50": 0.4487,
+        "P95": 2.6374,
+        "P99": 4.4212
+      },
+      "CPUSeconds": 5.46875,
+      "CPUCores": 1.0919745149571507,
+      "PeakRSSBytes": 25624576,
+      "PeakDescriptors": 265,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 20,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 7856,
+      "Errors": 0,
+      "Seconds": 5.0102532,
+      "RPS": 1567.984628002433,
+      "TotalMS": {
+        "P50": 10.038,
+        "P95": 12.8538,
+        "P99": 14.2322
+      },
+      "FirstMS": {
+        "P50": 5.5861,
+        "P95": 7.8037,
+        "P99": 8.944
+      },
+      "ResidualMS": {
+        "P50": 4.8598,
+        "P95": 7.2595,
+        "P99": 8.5267
+      },
+      "FirstResidualMS": {
+        "P50": 4.4527,
+        "P95": 6.5448,
+        "P99": 7.6433
+      },
+      "CPUSeconds": 40.671875,
+      "CPUCores": 8.117728461308102,
+      "PeakRSSBytes": 140337152,
+      "PeakDescriptors": 1126,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 100,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 7977,
+      "Errors": 0,
+      "Seconds": 5.0075199,
+      "RPS": 1593.004153613049,
+      "TotalMS": {
+        "P50": 9.8548,
+        "P95": 12.6975,
+        "P99": 13.9839
+      },
+      "FirstMS": {
+        "P50": 5.5042,
+        "P95": 7.6498,
+        "P99": 8.7293
+      },
+      "ResidualMS": {
+        "P50": 4.7756,
+        "P95": 7.1434,
+        "P99": 8.3971
+      },
+      "FirstResidualMS": {
+        "P50": 4.3988,
+        "P95": 6.3451,
+        "P99": 7.3277
+      },
+      "CPUSeconds": 42.515625,
+      "CPUCores": 8.490355674872106,
+      "PeakRSSBytes": 140189696,
+      "PeakDescriptors": 1102,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 100,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 1,
+      "Requests": 7979,
+      "Errors": 0,
+      "Seconds": 5.0090119,
+      "RPS": 1592.928936742993,
+      "TotalMS": {
+        "P50": 9.8829,
+        "P95": 12.5605,
+        "P99": 14.0036
+      },
+      "FirstMS": {
+        "P50": 5.5532,
+        "P95": 7.6793,
+        "P99": 8.6025
+      },
+      "ResidualMS": {
+        "P50": 4.7412,
+        "P95": 7.0328,
+        "P99": 8.1282
+      },
+      "FirstResidualMS": {
+        "P50": 4.3783,
+        "P95": 6.4248,
+        "P99": 7.3428
+      },
+      "CPUSeconds": 42.71875,
+      "CPUCores": 8.528378620941188,
+      "PeakRSSBytes": 141533184,
+      "PeakDescriptors": 1087,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 107,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 1,
+      "Requests": 120749,
+      "Errors": 0,
+      "Seconds": 5.0138747,
+      "RPS": 24082.971199898555,
+      "TotalMS": {
+        "P50": 1.9947,
+        "P95": 6.3118,
+        "P99": 8.9247
+      },
+      "FirstMS": {
+        "P50": 1.9397,
+        "P95": 6.2503,
+        "P99": 8.8247
+      },
+      "ResidualMS": {
+        "P50": 0.7042,
+        "P95": 4.0047,
+        "P99": 6.183
+      },
+      "FirstResidualMS": {
+        "P50": 0.6663,
+        "P95": 3.8757,
+        "P99": 6.0743
+      },
+      "CPUSeconds": 28.09375,
+      "CPUCores": 5.603201452162337,
+      "PeakRSSBytes": 34717696,
+      "PeakDescriptors": 454,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 71,
+      "HostGoroutinesPeak": 134,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 1,
+      "Requests": 20815,
+      "Errors": 0,
+      "Seconds": 5.0092677,
+      "RPS": 4155.2979889655335,
+      "TotalMS": {
+        "P50": 15.0025,
+        "P95": 21.7682,
+        "P99": 25.6315
+      },
+      "FirstMS": {
+        "P50": 14.9738,
+        "P95": 21.7273,
+        "P99": 25.5766
+      },
+      "ResidualMS": {
+        "P50": 13.4789,
+        "P95": 19.7871,
+        "P99": 23.2988
+      },
+      "FirstResidualMS": {
+        "P50": 13.4462,
+        "P95": 19.7387,
+        "P99": 23.2763
+      },
+      "CPUSeconds": 54.875,
+      "CPUCores": 10.954695034565631,
+      "PeakRSSBytes": 157614080,
+      "PeakDescriptors": 1416,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 241,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 1,
+      "Requests": 20650,
+      "Errors": 0,
+      "Seconds": 5.0110621,
+      "RPS": 4120.882876306801,
+      "TotalMS": {
+        "P50": 15.0983,
+        "P95": 21.9766,
+        "P99": 25.96
+      },
+      "FirstMS": {
+        "P50": 15.0683,
+        "P95": 21.949,
+        "P99": 25.9349
+      },
+      "ResidualMS": {
+        "P50": 13.5461,
+        "P95": 20.2082,
+        "P99": 24.0266
+      },
+      "FirstResidualMS": {
+        "P50": 13.5181,
+        "P95": 20.1665,
+        "P99": 23.9802
+      },
+      "CPUSeconds": 54.765625,
+      "CPUCores": 10.928945582214995,
+      "PeakRSSBytes": 163082240,
+      "PeakDescriptors": 1419,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 231,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 1,
+      "Requests": 20457,
+      "Errors": 0,
+      "Seconds": 5.0099639,
+      "RPS": 4083.262955248041,
+      "TotalMS": {
+        "P50": 15.2733,
+        "P95": 22.1307,
+        "P99": 25.6193
+      },
+      "FirstMS": {
+        "P50": 15.2426,
+        "P95": 22.1116,
+        "P99": 25.5998
+      },
+      "ResidualMS": {
+        "P50": 13.7846,
+        "P95": 20.2898,
+        "P99": 23.6937
+      },
+      "FirstResidualMS": {
+        "P50": 13.7559,
+        "P95": 20.2595,
+        "P99": 23.6694
+      },
+      "CPUSeconds": 54.71875,
+      "CPUCores": 10.92198488695697,
+      "PeakRSSBytes": 158732288,
+      "PeakDescriptors": 1398,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 228,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 1,
+      "Requests": 48696,
+      "Errors": 0,
+      "Seconds": 5.0081168,
+      "RPS": 9723.41539638213,
+      "TotalMS": {
+        "P50": 5.6476,
+        "P95": 11.7305,
+        "P99": 14.4147
+      },
+      "FirstMS": {
+        "P50": 1.4845,
+        "P95": 5.0467,
+        "P99": 6.7844
+      },
+      "ResidualMS": {
+        "P50": 0.3605,
+        "P95": 2.3724,
+        "P99": 4.0389
+      },
+      "FirstResidualMS": {
+        "P50": 0.3549,
+        "P95": 2.6244,
+        "P99": 4.309
+      },
+      "CPUSeconds": 24.03125,
+      "CPUCores": 4.79846037137153,
+      "PeakRSSBytes": 31350784,
+      "PeakDescriptors": 429,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 68,
+      "HostGoroutinesPeak": 145,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 1,
+      "Requests": 14747,
+      "Errors": 0,
+      "Seconds": 5.019472,
+      "RPS": 2937.958414749599,
+      "TotalMS": {
+        "P50": 21.3543,
+        "P95": 29.6524,
+        "P99": 34.129
+      },
+      "FirstMS": {
+        "P50": 15.3869,
+        "P95": 23.5906,
+        "P99": 27.5535
+      },
+      "ResidualMS": {
+        "P50": 14.468,
+        "P95": 21.9433,
+        "P99": 26.2047
+      },
+      "FirstResidualMS": {
+        "P50": 13.7264,
+        "P95": 21.6576,
+        "P99": 25.6527
+      },
+      "CPUSeconds": 51.8125,
+      "CPUCores": 10.322300831641256,
+      "PeakRSSBytes": 162488320,
+      "PeakDescriptors": 1435,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 266,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 1,
+      "Requests": 14657,
+      "Errors": 0,
+      "Seconds": 5.016064,
+      "RPS": 2922.01215933449,
+      "TotalMS": {
+        "P50": 21.2497,
+        "P95": 30.4383,
+        "P99": 35.5787
+      },
+      "FirstMS": {
+        "P50": 15.3261,
+        "P95": 23.8342,
+        "P99": 28.382
+      },
+      "ResidualMS": {
+        "P50": 14.4168,
+        "P95": 22.2903,
+        "P99": 26.8377
+      },
+      "FirstResidualMS": {
+        "P50": 13.6647,
+        "P95": 21.7949,
+        "P99": 26.1434
+      },
+      "CPUSeconds": 50.875,
+      "CPUCores": 10.142414450852302,
+      "PeakRSSBytes": 162897920,
+      "PeakDescriptors": 1438,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 282,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 1,
+      "Requests": 14859,
+      "Errors": 0,
+      "Seconds": 5.0190992,
+      "RPS": 2960.491396543826,
+      "TotalMS": {
+        "P50": 21.019,
+        "P95": 29.559,
+        "P99": 33.8672
+      },
+      "FirstMS": {
+        "P50": 15.1362,
+        "P95": 23.1843,
+        "P99": 27.2681
+      },
+      "ResidualMS": {
+        "P50": 14.1596,
+        "P95": 21.6975,
+        "P99": 25.7959
+      },
+      "FirstResidualMS": {
+        "P50": 13.501,
+        "P95": 21.2113,
+        "P99": 25.4013
+      },
+      "CPUSeconds": 51.140625,
+      "CPUCores": 10.189203871483551,
+      "PeakRSSBytes": 161488896,
+      "PeakDescriptors": 1445,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 251,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 2,
+      "Requests": 972,
+      "Errors": 0,
+      "Seconds": 5.0015376,
+      "RPS": 194.34023649047447,
+      "TotalMS": {
+        "P50": 5.0117,
+        "P95": 6.2981,
+        "P99": 7.4224
+      },
+      "FirstMS": {
+        "P50": 4.9792,
+        "P95": 6.2732,
+        "P99": 7.3875
+      },
+      "ResidualMS": {
+        "P50": 3.5357,
+        "P95": 4.7488,
+        "P99": 5.9908
+      },
+      "FirstResidualMS": {
+        "P50": 3.5059,
+        "P95": 4.7208,
+        "P99": 5.9556
+      },
+      "CPUSeconds": 6.59375,
+      "CPUCores": 1.3183445826739362,
+      "PeakRSSBytes": 168718336,
+      "PeakDescriptors": 817,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 34,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 2,
+      "Requests": 968,
+      "Errors": 0,
+      "Seconds": 5.0033764,
+      "RPS": 193.46935401462102,
+      "TotalMS": {
+        "P50": 5.0384,
+        "P95": 6.3696,
+        "P99": 7.2188
+      },
+      "FirstMS": {
+        "P50": 5.0067,
+        "P95": 6.3432,
+        "P99": 7.1918
+      },
+      "ResidualMS": {
+        "P50": 3.5606,
+        "P95": 4.7766,
+        "P99": 5.7029
+      },
+      "FirstResidualMS": {
+        "P50": 3.531,
+        "P95": 4.7518,
+        "P99": 5.6018
+      },
+      "CPUSeconds": 5.890625,
+      "CPUCores": 1.177329972616092,
+      "PeakRSSBytes": 168718336,
+      "PeakDescriptors": 817,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 34,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 2,
+      "Requests": 967,
+      "Errors": 0,
+      "Seconds": 5.0029235,
+      "RPS": 193.28698509981214,
+      "TotalMS": {
+        "P50": 5.0555,
+        "P95": 6.3918,
+        "P99": 7.6268
+      },
+      "FirstMS": {
+        "P50": 5.0243,
+        "P95": 6.3709,
+        "P99": 7.6002
+      },
+      "ResidualMS": {
+        "P50": 3.5583,
+        "P95": 4.7362,
+        "P99": 5.8242
+      },
+      "FirstResidualMS": {
+        "P50": 3.5288,
+        "P95": 4.7107,
+        "P99": 5.7928
+      },
+      "CPUSeconds": 6.046875,
+      "CPUCores": 1.2086682916498723,
+      "PeakRSSBytes": 170999808,
+      "PeakDescriptors": 818,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 2,
+      "Requests": 2789,
+      "Errors": 0,
+      "Seconds": 5.0013997,
+      "RPS": 557.6438931685464,
+      "TotalMS": {
+        "P50": 1.6349,
+        "P95": 2.5406,
+        "P99": 4.4342
+      },
+      "FirstMS": {
+        "P50": 1.606,
+        "P95": 2.4655,
+        "P99": 4.4111
+      },
+      "ResidualMS": {
+        "P50": 0.3013,
+        "P95": 0.8654,
+        "P99": 2.4979
+      },
+      "FirstResidualMS": {
+        "P50": 0.2707,
+        "P95": 0.8112,
+        "P99": 2.4592
+      },
+      "CPUSeconds": 1,
+      "CPUCores": 0.19994402766889435,
+      "PeakRSSBytes": 20463616,
+      "PeakDescriptors": 194,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 5,
+      "HostGoroutinesPeak": 6,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 2,
+      "Requests": 497,
+      "Errors": 0,
+      "Seconds": 5.0064869,
+      "RPS": 99.27120752078669,
+      "TotalMS": {
+        "P50": 9.8663,
+        "P95": 11.8975,
+        "P99": 12.7201
+      },
+      "FirstMS": {
+        "P50": 4.6958,
+        "P95": 6.0859,
+        "P99": 7.2202
+      },
+      "ResidualMS": {
+        "P50": 3.4921,
+        "P95": 4.7664,
+        "P99": 5.8578
+      },
+      "FirstResidualMS": {
+        "P50": 3.2044,
+        "P95": 4.324,
+        "P99": 5.5861
+      },
+      "CPUSeconds": 6.015625,
+      "CPUCores": 1.2015661121574093,
+      "PeakRSSBytes": 169111552,
+      "PeakDescriptors": 805,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 2,
+      "Requests": 496,
+      "Errors": 0,
+      "Seconds": 5.0046252,
+      "RPS": 99.10832083889119,
+      "TotalMS": {
+        "P50": 9.7542,
+        "P95": 11.4029,
+        "P99": 13.147
+      },
+      "FirstMS": {
+        "P50": 4.6311,
+        "P95": 5.9884,
+        "P99": 7.335
+      },
+      "ResidualMS": {
+        "P50": 3.3757,
+        "P95": 4.5467,
+        "P99": 6.2247
+      },
+      "FirstResidualMS": {
+        "P50": 3.1614,
+        "P95": 4.378,
+        "P99": 5.8607
+      },
+      "CPUSeconds": 5.3125,
+      "CPUCores": 1.0615180533399384,
+      "PeakRSSBytes": 167813120,
+      "PeakDescriptors": 807,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 2,
+      "Requests": 494,
+      "Errors": 0,
+      "Seconds": 5.0015812,
+      "RPS": 98.76876536564076,
+      "TotalMS": {
+        "P50": 9.8676,
+        "P95": 11.4023,
+        "P99": 12.6555
+      },
+      "FirstMS": {
+        "P50": 4.6899,
+        "P95": 5.938,
+        "P99": 7.4992
+      },
+      "ResidualMS": {
+        "P50": 3.5379,
+        "P95": 4.5053,
+        "P99": 5.8149
+      },
+      "FirstResidualMS": {
+        "P50": 3.1831,
+        "P95": 4.2874,
+        "P99": 5.6415
+      },
+      "CPUSeconds": 5.3125,
+      "CPUCores": 1.0621641012246286,
+      "PeakRSSBytes": 168443904,
+      "PeakDescriptors": 792,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 2,
+      "Requests": 740,
+      "Errors": 0,
+      "Seconds": 5.0041562,
+      "RPS": 147.87707865713705,
+      "TotalMS": {
+        "P50": 6.4584,
+        "P95": 8.3322,
+        "P99": 11.1746
+      },
+      "FirstMS": {
+        "P50": 1.6393,
+        "P95": 2.8536,
+        "P99": 5.047
+      },
+      "ResidualMS": {
+        "P50": 0.2767,
+        "P95": 0.9522,
+        "P99": 2.4512
+      },
+      "FirstResidualMS": {
+        "P50": 0.3054,
+        "P95": 1.043,
+        "P99": 2.5967
+      },
+      "CPUSeconds": 0.625,
+      "CPUCores": 0.12489618129825765,
+      "PeakRSSBytes": 19914752,
+      "PeakDescriptors": 186,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 5,
+      "HostGoroutinesPeak": 6,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 2,
+      "Requests": 12062,
+      "Errors": 0,
+      "Seconds": 5.0038984,
+      "RPS": 2410.520565325627,
+      "TotalMS": {
+        "P50": 6.5067,
+        "P95": 8.7771,
+        "P99": 10.0527
+      },
+      "FirstMS": {
+        "P50": 6.4784,
+        "P95": 8.7521,
+        "P99": 10.0258
+      },
+      "ResidualMS": {
+        "P50": 5.356,
+        "P95": 7.4799,
+        "P99": 8.7161
+      },
+      "FirstResidualMS": {
+        "P50": 5.3267,
+        "P95": 7.4471,
+        "P99": 8.6866
+      },
+      "CPUSeconds": 44.984375,
+      "CPUCores": 8.989865781447522,
+      "PeakRSSBytes": 140013568,
+      "PeakDescriptors": 1121,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 79,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 2,
+      "Requests": 12055,
+      "Errors": 0,
+      "Seconds": 5.006355,
+      "RPS": 2407.939508884208,
+      "TotalMS": {
+        "P50": 6.4609,
+        "P95": 8.731,
+        "P99": 10.1657
+      },
+      "FirstMS": {
+        "P50": 6.4314,
+        "P95": 8.7055,
+        "P99": 10.1213
+      },
+      "ResidualMS": {
+        "P50": 5.2979,
+        "P95": 7.4032,
+        "P99": 8.6971
+      },
+      "FirstResidualMS": {
+        "P50": 5.2696,
+        "P95": 7.3741,
+        "P99": 8.6624
+      },
+      "CPUSeconds": 43.5,
+      "CPUCores": 8.688956336496313,
+      "PeakRSSBytes": 140861440,
+      "PeakDescriptors": 1129,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 79,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 2,
+      "Requests": 11710,
+      "Errors": 0,
+      "Seconds": 5.0047175,
+      "RPS": 2339.7924058650665,
+      "TotalMS": {
+        "P50": 6.6294,
+        "P95": 9.04,
+        "P99": 10.6308
+      },
+      "FirstMS": {
+        "P50": 6.6012,
+        "P95": 9.0151,
+        "P99": 10.6078
+      },
+      "ResidualMS": {
+        "P50": 5.4479,
+        "P95": 7.7137,
+        "P99": 9.112
+      },
+      "FirstResidualMS": {
+        "P50": 5.4214,
+        "P95": 7.687,
+        "P99": 9.0852
+      },
+      "CPUSeconds": 43.75,
+      "CPUCores": 8.741752156840022,
+      "PeakRSSBytes": 139386880,
+      "PeakDescriptors": 1103,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 84,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 2,
+      "Requests": 41559,
+      "Errors": 0,
+      "Seconds": 5.0035167,
+      "RPS": 8305.958087438781,
+      "TotalMS": {
+        "P50": 1.3409,
+        "P95": 4.5939,
+        "P99": 6.7128
+      },
+      "FirstMS": {
+        "P50": 1.3149,
+        "P95": 4.5579,
+        "P99": 6.6725
+      },
+      "ResidualMS": {
+        "P50": 0.3207,
+        "P95": 2.2872,
+        "P99": 3.56
+      },
+      "FirstResidualMS": {
+        "P50": 0.2989,
+        "P95": 2.2541,
+        "P99": 3.5161
+      },
+      "CPUSeconds": 7.953125,
+      "CPUCores": 1.5895070361212147,
+      "PeakRSSBytes": 28008448,
+      "PeakDescriptors": 362,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 20,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 2,
+      "Requests": 7839,
+      "Errors": 0,
+      "Seconds": 5.008745,
+      "RPS": 1565.0627053283806,
+      "TotalMS": {
+        "P50": 10.0412,
+        "P95": 12.8464,
+        "P99": 14.4206
+      },
+      "FirstMS": {
+        "P50": 5.6197,
+        "P95": 7.8541,
+        "P99": 9.0051
+      },
+      "ResidualMS": {
+        "P50": 4.8247,
+        "P95": 7.3077,
+        "P99": 8.727
+      },
+      "FirstResidualMS": {
+        "P50": 4.4437,
+        "P95": 6.6326,
+        "P99": 7.6519
+      },
+      "CPUSeconds": 42.796875,
+      "CPUCores": 8.544430790547333,
+      "PeakRSSBytes": 140734464,
+      "PeakDescriptors": 1124,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 102,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 2,
+      "Requests": 7891,
+      "Errors": 0,
+      "Seconds": 5.0096648,
+      "RPS": 1575.1552878348266,
+      "TotalMS": {
+        "P50": 10.028,
+        "P95": 12.6792,
+        "P99": 13.9368
+      },
+      "FirstMS": {
+        "P50": 5.6588,
+        "P95": 7.7537,
+        "P99": 8.7767
+      },
+      "ResidualMS": {
+        "P50": 4.8352,
+        "P95": 7.1969,
+        "P99": 8.4076
+      },
+      "FirstResidualMS": {
+        "P50": 4.4857,
+        "P95": 6.4698,
+        "P99": 7.4077
+      },
+      "CPUSeconds": 42.453125,
+      "CPUCores": 8.474244624111376,
+      "PeakRSSBytes": 139956224,
+      "PeakDescriptors": 1113,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 102,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 2,
+      "Requests": 7906,
+      "Errors": 0,
+      "Seconds": 5.0105956,
+      "RPS": 1577.8563330874276,
+      "TotalMS": {
+        "P50": 9.9925,
+        "P95": 12.7122,
+        "P99": 14.0856
+      },
+      "FirstMS": {
+        "P50": 5.5493,
+        "P95": 7.7176,
+        "P99": 8.7469
+      },
+      "ResidualMS": {
+        "P50": 4.7671,
+        "P95": 7.0691,
+        "P99": 8.1984
+      },
+      "FirstResidualMS": {
+        "P50": 4.386,
+        "P95": 6.4439,
+        "P99": 7.4182
+      },
+      "CPUSeconds": 42.546875,
+      "CPUCores": 8.491380745235157,
+      "PeakRSSBytes": 140058624,
+      "PeakDescriptors": 1109,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 107,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 2,
+      "Requests": 11780,
+      "Errors": 0,
+      "Seconds": 5.0144169,
+      "RPS": 2349.2262879059776,
+      "TotalMS": {
+        "P50": 6.2578,
+        "P95": 10.7164,
+        "P99": 13.7629
+      },
+      "FirstMS": {
+        "P50": 1.6618,
+        "P95": 4.55,
+        "P99": 6.9038
+      },
+      "ResidualMS": {
+        "P50": 0.5377,
+        "P95": 2.4079,
+        "P99": 3.7346
+      },
+      "FirstResidualMS": {
+        "P50": 0.4735,
+        "P95": 2.2929,
+        "P99": 3.7191
+      },
+      "CPUSeconds": 5.453125,
+      "CPUCores": 1.0874893549437423,
+      "PeakRSSBytes": 25145344,
+      "PeakDescriptors": 281,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 20,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 2,
+      "Requests": 20595,
+      "Errors": 0,
+      "Seconds": 5.0104867,
+      "RPS": 4110.379137419924,
+      "TotalMS": {
+        "P50": 15.1504,
+        "P95": 21.8282,
+        "P99": 25.1751
+      },
+      "FirstMS": {
+        "P50": 15.1217,
+        "P95": 21.7943,
+        "P99": 25.1429
+      },
+      "ResidualMS": {
+        "P50": 13.6695,
+        "P95": 20.0324,
+        "P99": 23.1414
+      },
+      "FirstResidualMS": {
+        "P50": 13.6393,
+        "P95": 19.9923,
+        "P99": 23.123
+      },
+      "CPUSeconds": 53.953125,
+      "CPUCores": 10.768040757397879,
+      "PeakRSSBytes": 162545664,
+      "PeakDescriptors": 1413,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 235,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 2,
+      "Requests": 20253,
+      "Errors": 0,
+      "Seconds": 5.0081933,
+      "RPS": 4043.9733027077846,
+      "TotalMS": {
+        "P50": 15.3955,
+        "P95": 22.4975,
+        "P99": 25.8833
+      },
+      "FirstMS": {
+        "P50": 15.3692,
+        "P95": 22.4729,
+        "P99": 25.8548
+      },
+      "ResidualMS": {
+        "P50": 13.9001,
+        "P95": 20.6193,
+        "P99": 24.1612
+      },
+      "FirstResidualMS": {
+        "P50": 13.8727,
+        "P95": 20.595,
+        "P99": 24.1359
+      },
+      "CPUSeconds": 53.703125,
+      "CPUCores": 10.723053561051646,
+      "PeakRSSBytes": 161398784,
+      "PeakDescriptors": 1397,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 213,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 2,
+      "Requests": 20564,
+      "Errors": 0,
+      "Seconds": 5.0086456,
+      "RPS": 4105.700750717919,
+      "TotalMS": {
+        "P50": 15.1482,
+        "P95": 21.9571,
+        "P99": 25.7123
+      },
+      "FirstMS": {
+        "P50": 15.1221,
+        "P95": 21.9304,
+        "P99": 25.6918
+      },
+      "ResidualMS": {
+        "P50": 13.6703,
+        "P95": 20.1544,
+        "P99": 23.6768
+      },
+      "FirstResidualMS": {
+        "P50": 13.6442,
+        "P95": 20.1319,
+        "P99": 23.647
+      },
+      "CPUSeconds": 55.078125,
+      "CPUCores": 10.996610540781722,
+      "PeakRSSBytes": 158248960,
+      "PeakDescriptors": 1392,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 224,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 2,
+      "Requests": 127230,
+      "Errors": 0,
+      "Seconds": 5.0098537,
+      "RPS": 25395.95118316529,
+      "TotalMS": {
+        "P50": 1.8562,
+        "P95": 6.311,
+        "P99": 9.1095
+      },
+      "FirstMS": {
+        "P50": 1.8273,
+        "P95": 6.2704,
+        "P99": 9.0565
+      },
+      "ResidualMS": {
+        "P50": 0.6386,
+        "P95": 3.7704,
+        "P99": 6.1883
+      },
+      "FirstResidualMS": {
+        "P50": 0.6113,
+        "P95": 3.6984,
+        "P99": 6.1302
+      },
+      "CPUSeconds": 30.40625,
+      "CPUCores": 6.069289009377659,
+      "PeakRSSBytes": 34377728,
+      "PeakDescriptors": 456,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 72,
+      "HostGoroutinesPeak": 136,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 2,
+      "Requests": 14729,
+      "Errors": 0,
+      "Seconds": 5.020357,
+      "RPS": 2933.855102336348,
+      "TotalMS": {
+        "P50": 21.1572,
+        "P95": 29.9924,
+        "P99": 34.6778
+      },
+      "FirstMS": {
+        "P50": 15.3094,
+        "P95": 23.3551,
+        "P99": 27.3375
+      },
+      "ResidualMS": {
+        "P50": 14.3042,
+        "P95": 21.9093,
+        "P99": 26.1389
+      },
+      "FirstResidualMS": {
+        "P50": 13.6695,
+        "P95": 21.4597,
+        "P99": 25.3296
+      },
+      "CPUSeconds": 51.5,
+      "CPUCores": 10.258234623553664,
+      "PeakRSSBytes": 161845248,
+      "PeakDescriptors": 1427,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 274,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 2,
+      "Requests": 14695,
+      "Errors": 0,
+      "Seconds": 5.0158421,
+      "RPS": 2929.7174247171774,
+      "TotalMS": {
+        "P50": 21.1651,
+        "P95": 30.4836,
+        "P99": 35.1703
+      },
+      "FirstMS": {
+        "P50": 15.2355,
+        "P95": 23.6733,
+        "P99": 28.1967
+      },
+      "ResidualMS": {
+        "P50": 14.2521,
+        "P95": 22.5727,
+        "P99": 26.744
+      },
+      "FirstResidualMS": {
+        "P50": 13.5806,
+        "P95": 21.6778,
+        "P99": 26.1673
+      },
+      "CPUSeconds": 54,
+      "CPUCores": 10.765889141526205,
+      "PeakRSSBytes": 166342656,
+      "PeakDescriptors": 1447,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 277,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 2,
+      "Requests": 14689,
+      "Errors": 0,
+      "Seconds": 5.0142125,
+      "RPS": 2929.472973074037,
+      "TotalMS": {
+        "P50": 21.2647,
+        "P95": 30.2431,
+        "P99": 35.3759
+      },
+      "FirstMS": {
+        "P50": 15.1743,
+        "P95": 23.5096,
+        "P99": 27.8518
+      },
+      "ResidualMS": {
+        "P50": 14.4145,
+        "P95": 22.1487,
+        "P99": 26.6912
+      },
+      "FirstResidualMS": {
+        "P50": 13.5663,
+        "P95": 21.5614,
+        "P99": 25.7098
+      },
+      "CPUSeconds": 52.359375,
+      "CPUCores": 10.442193066209299,
+      "PeakRSSBytes": 161841152,
+      "PeakDescriptors": 1532,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 267,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 2,
+      "Requests": 49235,
+      "Errors": 0,
+      "Seconds": 5.0073398,
+      "RPS": 9832.566186141392,
+      "TotalMS": {
+        "P50": 5.4653,
+        "P95": 11.7473,
+        "P99": 14.689
+      },
+      "FirstMS": {
+        "P50": 1.4286,
+        "P95": 5.008,
+        "P99": 6.8658
+      },
+      "ResidualMS": {
+        "P50": 0.305,
+        "P95": 2.2285,
+        "P99": 3.986
+      },
+      "FirstResidualMS": {
+        "P50": 0.3111,
+        "P95": 2.5264,
+        "P99": 4.3173
+      },
+      "CPUSeconds": 24.578125,
+      "CPUCores": 4.908419636310682,
+      "PeakRSSBytes": 32731136,
+      "PeakDescriptors": 424,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 70,
+      "HostGoroutinesPeak": 134,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 3,
+      "Requests": 963,
+      "Errors": 0,
+      "Seconds": 5.0031887,
+      "RPS": 192.47724955886633,
+      "TotalMS": {
+        "P50": 5.1102,
+        "P95": 6.2697,
+        "P99": 7.0278
+      },
+      "FirstMS": {
+        "P50": 5.0816,
+        "P95": 6.2455,
+        "P99": 6.9974
+      },
+      "ResidualMS": {
+        "P50": 3.6316,
+        "P95": 4.7345,
+        "P99": 5.4058
+      },
+      "FirstResidualMS": {
+        "P50": 3.6017,
+        "P95": 4.6979,
+        "P99": 5.3739
+      },
+      "CPUSeconds": 6.25,
+      "CPUCores": 1.2492033330663703,
+      "PeakRSSBytes": 168103936,
+      "PeakDescriptors": 821,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 34,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 3,
+      "Requests": 964,
+      "Errors": 0,
+      "Seconds": 5.0005813,
+      "RPS": 192.77758767765658,
+      "TotalMS": {
+        "P50": 5.0677,
+        "P95": 6.3896,
+        "P99": 7.1952
+      },
+      "FirstMS": {
+        "P50": 5.0379,
+        "P95": 6.364,
+        "P99": 7.1693
+      },
+      "ResidualMS": {
+        "P50": 3.6187,
+        "P95": 4.7918,
+        "P99": 5.7163
+      },
+      "FirstResidualMS": {
+        "P50": 3.5874,
+        "P95": 4.7569,
+        "P99": 5.6866
+      },
+      "CPUSeconds": 6.359375,
+      "CPUCores": 1.271727149001657,
+      "PeakRSSBytes": 170172416,
+      "PeakDescriptors": 799,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 34,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 3,
+      "Requests": 2921,
+      "Errors": 0,
+      "Seconds": 5.0000868,
+      "RPS": 584.189858464057,
+      "TotalMS": {
+        "P50": 1.6017,
+        "P95": 2.2166,
+        "P99": 3.4822
+      },
+      "FirstMS": {
+        "P50": 1.5715,
+        "P95": 2.1813,
+        "P99": 3.4553
+      },
+      "ResidualMS": {
+        "P50": 0.2732,
+        "P95": 0.6557,
+        "P99": 1.7979
+      },
+      "FirstResidualMS": {
+        "P50": 0.2452,
+        "P95": 0.601,
+        "P99": 1.7759
+      },
+      "CPUSeconds": 0.84375,
+      "CPUCores": 0.16874707055085522,
+      "PeakRSSBytes": 20627456,
+      "PeakDescriptors": 186,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 5,
+      "HostGoroutinesPeak": 6,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 1,
+      "Repeat": 3,
+      "Requests": 988,
+      "Errors": 0,
+      "Seconds": 5.0025893,
+      "RPS": 197.49772382873803,
+      "TotalMS": {
+        "P50": 4.9409,
+        "P95": 6.2183,
+        "P99": 7.1768
+      },
+      "FirstMS": {
+        "P50": 4.9089,
+        "P95": 6.1912,
+        "P99": 7.1465
+      },
+      "ResidualMS": {
+        "P50": 3.4802,
+        "P95": 4.6952,
+        "P99": 5.5483
+      },
+      "FirstResidualMS": {
+        "P50": 3.4493,
+        "P95": 4.6609,
+        "P99": 5.5002
+      },
+      "CPUSeconds": 6.109375,
+      "CPUCores": 1.2212425673240854,
+      "PeakRSSBytes": 168685568,
+      "PeakDescriptors": 821,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 34,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 3,
+      "Requests": 506,
+      "Errors": 0,
+      "Seconds": 5.0063293,
+      "RPS": 101.07205692601963,
+      "TotalMS": {
+        "P50": 9.7075,
+        "P95": 11.2402,
+        "P99": 12.1197
+      },
+      "FirstMS": {
+        "P50": 4.6,
+        "P95": 5.9121,
+        "P99": 6.6699
+      },
+      "ResidualMS": {
+        "P50": 3.4144,
+        "P95": 4.3188,
+        "P99": 5.3666
+      },
+      "FirstResidualMS": {
+        "P50": 3.1435,
+        "P95": 4.202,
+        "P99": 5.1815
+      },
+      "CPUSeconds": 5.84375,
+      "CPUCores": 1.1672723965640854,
+      "PeakRSSBytes": 213602304,
+      "PeakDescriptors": 807,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 3,
+      "Requests": 501,
+      "Errors": 0,
+      "Seconds": 5.0013448,
+      "RPS": 100.17305745446704,
+      "TotalMS": {
+        "P50": 9.7338,
+        "P95": 11.4031,
+        "P99": 12.4027
+      },
+      "FirstMS": {
+        "P50": 4.6481,
+        "P95": 6.0917,
+        "P99": 6.7521
+      },
+      "ResidualMS": {
+        "P50": 3.4801,
+        "P95": 4.6651,
+        "P99": 5.4222
+      },
+      "FirstResidualMS": {
+        "P50": 3.1717,
+        "P95": 4.3681,
+        "P99": 5.1055
+      },
+      "CPUSeconds": 5.390625,
+      "CPUCores": 1.0778351054700328,
+      "PeakRSSBytes": 169054208,
+      "PeakDescriptors": 818,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 3,
+      "Requests": 734,
+      "Errors": 0,
+      "Seconds": 5.0021164,
+      "RPS": 146.73788878643447,
+      "TotalMS": {
+        "P50": 6.4511,
+        "P95": 8.5486,
+        "P99": 12.2523
+      },
+      "FirstMS": {
+        "P50": 1.6177,
+        "P95": 2.7794,
+        "P99": 5.9559
+      },
+      "ResidualMS": {
+        "P50": 0.2735,
+        "P95": 0.8395,
+        "P99": 2.2025
+      },
+      "FirstResidualMS": {
+        "P50": 0.2976,
+        "P95": 0.9279,
+        "P99": 2.4898
+      },
+      "CPUSeconds": 0.515625,
+      "CPUCores": 0.10308136771867203,
+      "PeakRSSBytes": 20025344,
+      "PeakDescriptors": 184,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 5,
+      "HostGoroutinesPeak": 6,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 1,
+      "Repeat": 3,
+      "Requests": 504,
+      "Errors": 0,
+      "Seconds": 5.0042608,
+      "RPS": 100.71417540828408,
+      "TotalMS": {
+        "P50": 9.7184,
+        "P95": 11.4354,
+        "P99": 13.2712
+      },
+      "FirstMS": {
+        "P50": 4.5954,
+        "P95": 5.7794,
+        "P99": 6.4999
+      },
+      "ResidualMS": {
+        "P50": 3.4724,
+        "P95": 4.6438,
+        "P99": 5.1956
+      },
+      "FirstResidualMS": {
+        "P50": 3.1489,
+        "P95": 4.1795,
+        "P99": 4.9125
+      },
+      "CPUSeconds": 5.0625,
+      "CPUCores": 1.0116379226278533,
+      "PeakRSSBytes": 169627648,
+      "PeakDescriptors": 812,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 32,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 3,
+      "Requests": 11966,
+      "Errors": 0,
+      "Seconds": 5.0045602,
+      "RPS": 2391.0192947624046,
+      "TotalMS": {
+        "P50": 6.5363,
+        "P95": 8.8018,
+        "P99": 10.0847
+      },
+      "FirstMS": {
+        "P50": 6.5119,
+        "P95": 8.7774,
+        "P99": 10.0558
+      },
+      "ResidualMS": {
+        "P50": 5.3782,
+        "P95": 7.5085,
+        "P99": 8.685
+      },
+      "FirstResidualMS": {
+        "P50": 5.3505,
+        "P95": 7.4787,
+        "P99": 8.6592
+      },
+      "CPUSeconds": 43.28125,
+      "CPUCores": 8.64836234760449,
+      "PeakRSSBytes": 139902976,
+      "PeakDescriptors": 1114,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 81,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 3,
+      "Requests": 12009,
+      "Errors": 0,
+      "Seconds": 5.0049704,
+      "RPS": 2399.4147897458092,
+      "TotalMS": {
+        "P50": 6.5407,
+        "P95": 8.8254,
+        "P99": 9.988
+      },
+      "FirstMS": {
+        "P50": 6.5161,
+        "P95": 8.7971,
+        "P99": 9.9594
+      },
+      "ResidualMS": {
+        "P50": 5.3792,
+        "P95": 7.5849,
+        "P99": 8.6933
+      },
+      "FirstResidualMS": {
+        "P50": 5.3528,
+        "P95": 7.5471,
+        "P99": 8.6651
+      },
+      "CPUSeconds": 44.421875,
+      "CPUCores": 8.875551991276511,
+      "PeakRSSBytes": 140124160,
+      "PeakDescriptors": 1138,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 81,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 3,
+      "Requests": 44447,
+      "Errors": 0,
+      "Seconds": 5.0104553,
+      "RPS": 8870.850519313084,
+      "TotalMS": {
+        "P50": 1.2867,
+        "P95": 4.1692,
+        "P99": 6.2939
+      },
+      "FirstMS": {
+        "P50": 1.2621,
+        "P95": 4.1467,
+        "P99": 6.277
+      },
+      "ResidualMS": {
+        "P50": 0.3022,
+        "P95": 2.0967,
+        "P99": 3.3671
+      },
+      "FirstResidualMS": {
+        "P50": 0.2798,
+        "P95": 2.0725,
+        "P99": 3.3328
+      },
+      "CPUSeconds": 9.171875,
+      "CPUCores": 1.8305472159386393,
+      "PeakRSSBytes": 28565504,
+      "PeakDescriptors": 361,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 20,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 16,
+      "Repeat": 3,
+      "Requests": 12136,
+      "Errors": 0,
+      "Seconds": 5.0034134,
+      "RPS": 2425.54412953365,
+      "TotalMS": {
+        "P50": 6.4512,
+        "P95": 8.7428,
+        "P99": 10.2091
+      },
+      "FirstMS": {
+        "P50": 6.4249,
+        "P95": 8.707,
+        "P99": 10.1754
+      },
+      "ResidualMS": {
+        "P50": 5.3054,
+        "P95": 7.4151,
+        "P99": 8.6254
+      },
+      "FirstResidualMS": {
+        "P50": 5.2789,
+        "P95": 7.3873,
+        "P99": 8.5973
+      },
+      "CPUSeconds": 47.328125,
+      "CPUCores": 9.459167415588725,
+      "PeakRSSBytes": 140759040,
+      "PeakDescriptors": 1161,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 86,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 3,
+      "Requests": 7956,
+      "Errors": 0,
+      "Seconds": 5.009125,
+      "RPS": 1588.301350036184,
+      "TotalMS": {
+        "P50": 9.9025,
+        "P95": 12.7017,
+        "P99": 14.0551
+      },
+      "FirstMS": {
+        "P50": 5.5603,
+        "P95": 7.6752,
+        "P99": 8.7277
+      },
+      "ResidualMS": {
+        "P50": 4.7946,
+        "P95": 7.1695,
+        "P99": 8.2795
+      },
+      "FirstResidualMS": {
+        "P50": 4.4203,
+        "P95": 6.4286,
+        "P99": 7.4425
+      },
+      "CPUSeconds": 42.109375,
+      "CPUCores": 8.40653307713423,
+      "PeakRSSBytes": 139845632,
+      "PeakDescriptors": 1099,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 111,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 3,
+      "Requests": 7901,
+      "Errors": 0,
+      "Seconds": 5.005209,
+      "RPS": 1578.5554609208127,
+      "TotalMS": {
+        "P50": 9.9941,
+        "P95": 12.802,
+        "P99": 14.0805
+      },
+      "FirstMS": {
+        "P50": 5.5783,
+        "P95": 7.7313,
+        "P99": 8.8354
+      },
+      "ResidualMS": {
+        "P50": 4.8334,
+        "P95": 7.2321,
+        "P99": 8.3751
+      },
+      "FirstResidualMS": {
+        "P50": 4.4508,
+        "P95": 6.4658,
+        "P99": 7.5317
+      },
+      "CPUSeconds": 41.46875,
+      "CPUCores": 8.285118563480566,
+      "PeakRSSBytes": 142630912,
+      "PeakDescriptors": 1119,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 109,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 3,
+      "Requests": 11820,
+      "Errors": 0,
+      "Seconds": 5.0064006,
+      "RPS": 2360.977665271133,
+      "TotalMS": {
+        "P50": 6.1023,
+        "P95": 11.0247,
+        "P99": 15.6738
+      },
+      "FirstMS": {
+        "P50": 1.6104,
+        "P95": 4.6384,
+        "P99": 7.7403
+      },
+      "ResidualMS": {
+        "P50": 0.5253,
+        "P95": 2.6244,
+        "P99": 5.709
+      },
+      "FirstResidualMS": {
+        "P50": 0.44,
+        "P95": 2.3523,
+        "P99": 3.8839
+      },
+      "CPUSeconds": 5.609375,
+      "CPUCores": 1.1204407014492608,
+      "PeakRSSBytes": 25276416,
+      "PeakDescriptors": 321,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 20,
+      "HostGoroutinesPeak": 36,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 16,
+      "Repeat": 3,
+      "Requests": 7929,
+      "Errors": 0,
+      "Seconds": 5.0103104,
+      "RPS": 1582.53668275722,
+      "TotalMS": {
+        "P50": 9.9205,
+        "P95": 12.7821,
+        "P99": 14.1315
+      },
+      "FirstMS": {
+        "P50": 5.5861,
+        "P95": 7.8036,
+        "P99": 8.9641
+      },
+      "ResidualMS": {
+        "P50": 4.7902,
+        "P95": 7.1523,
+        "P99": 8.4417
+      },
+      "FirstResidualMS": {
+        "P50": 4.4439,
+        "P95": 6.5238,
+        "P99": 7.5597
+      },
+      "CPUSeconds": 43.359375,
+      "CPUCores": 8.654029698439443,
+      "PeakRSSBytes": 140136448,
+      "PeakDescriptors": 1085,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 47,
+      "HostGoroutinesPeak": 102,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 3,
+      "Requests": 20715,
+      "Errors": 0,
+      "Seconds": 5.0088488,
+      "RPS": 4135.68083748106,
+      "TotalMS": {
+        "P50": 15.0124,
+        "P95": 21.9771,
+        "P99": 25.7795
+      },
+      "FirstMS": {
+        "P50": 14.9836,
+        "P95": 21.9377,
+        "P99": 25.7576
+      },
+      "ResidualMS": {
+        "P50": 13.4776,
+        "P95": 20.0502,
+        "P99": 23.723
+      },
+      "FirstResidualMS": {
+        "P50": 13.4495,
+        "P95": 20.017,
+        "P99": 23.6981
+      },
+      "CPUSeconds": 53.59375,
+      "CPUCores": 10.699813897357014,
+      "PeakRSSBytes": 160628736,
+      "PeakDescriptors": 1425,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 222,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 3,
+      "Requests": 20620,
+      "Errors": 0,
+      "Seconds": 5.013141,
+      "RPS": 4113.189714791584,
+      "TotalMS": {
+        "P50": 15.0666,
+        "P95": 22.2395,
+        "P99": 25.8547
+      },
+      "FirstMS": {
+        "P50": 15.0365,
+        "P95": 22.2179,
+        "P99": 25.8198
+      },
+      "ResidualMS": {
+        "P50": 13.5312,
+        "P95": 20.3466,
+        "P99": 23.7827
+      },
+      "FirstResidualMS": {
+        "P50": 13.5036,
+        "P95": 20.3222,
+        "P99": 23.7471
+      },
+      "CPUSeconds": 52.953125,
+      "CPUCores": 10.56286368167183,
+      "PeakRSSBytes": 158281728,
+      "PeakDescriptors": 1395,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 212,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 3,
+      "Requests": 122646,
+      "Errors": 0,
+      "Seconds": 5.0111324,
+      "RPS": 24474.70755312711,
+      "TotalMS": {
+        "P50": 1.9979,
+        "P95": 6.3046,
+        "P99": 8.9975
+      },
+      "FirstMS": {
+        "P50": 1.9688,
+        "P95": 6.2641,
+        "P99": 8.9477
+      },
+      "ResidualMS": {
+        "P50": 0.7105,
+        "P95": 3.7994,
+        "P99": 6.2562
+      },
+      "FirstResidualMS": {
+        "P50": 0.6841,
+        "P95": 3.7351,
+        "P99": 6.2005
+      },
+      "CPUSeconds": 30.0625,
+      "CPUCores": 5.999143028030949,
+      "PeakRSSBytes": 34627584,
+      "PeakDescriptors": 448,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 72,
+      "HostGoroutinesPeak": 134,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "JSON",
+      "Concurrency": 64,
+      "Repeat": 3,
+      "Requests": 20500,
+      "Errors": 0,
+      "Seconds": 5.0081789,
+      "RPS": 4093.304254766139,
+      "TotalMS": {
+        "P50": 15.1357,
+        "P95": 22.5932,
+        "P99": 26.4681
+      },
+      "FirstMS": {
+        "P50": 15.1071,
+        "P95": 22.5516,
+        "P99": 26.4162
+      },
+      "ResidualMS": {
+        "P50": 13.6284,
+        "P95": 20.6237,
+        "P99": 24.4741
+      },
+      "FirstResidualMS": {
+        "P50": 13.601,
+        "P95": 20.5914,
+        "P99": 24.4247
+      },
+      "CPUSeconds": 53.9375,
+      "CPUCores": 10.769882841046273,
+      "PeakRSSBytes": 158412800,
+      "PeakDescriptors": 1430,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 216,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.roundrobin",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 3,
+      "Requests": 14616,
+      "Errors": 0,
+      "Seconds": 5.0169471,
+      "RPS": 2913.3255162287837,
+      "TotalMS": {
+        "P50": 21.3678,
+        "P95": 30.7242,
+        "P99": 35.9993
+      },
+      "FirstMS": {
+        "P50": 15.4476,
+        "P95": 24.2299,
+        "P99": 29.5549
+      },
+      "ResidualMS": {
+        "P50": 14.6431,
+        "P95": 23.084,
+        "P99": 27.4847
+      },
+      "FirstResidualMS": {
+        "P50": 13.8692,
+        "P95": 22.3624,
+        "P99": 27.289
+      },
+      "CPUSeconds": 51.96875,
+      "CPUCores": 10.358640217673413,
+      "PeakRSSBytes": 163885056,
+      "PeakDescriptors": 1445,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 293,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "scheduler.priority-weight-health",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 3,
+      "Requests": 14531,
+      "Errors": 0,
+      "Seconds": 5.0159615,
+      "RPS": 2896.952059939056,
+      "TotalMS": {
+        "P50": 21.5913,
+        "P95": 30.8514,
+        "P99": 35.322
+      },
+      "FirstMS": {
+        "P50": 15.428,
+        "P95": 24.1966,
+        "P99": 28.1925
+      },
+      "ResidualMS": {
+        "P50": 14.6829,
+        "P95": 22.8803,
+        "P99": 26.8911
+      },
+      "FirstResidualMS": {
+        "P50": 13.7395,
+        "P95": 22.2097,
+        "P99": 26.2453
+      },
+      "CPUSeconds": 53.328125,
+      "CPUCores": 10.63168547047261,
+      "PeakRSSBytes": 165613568,
+      "PeakDescriptors": 1460,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 261,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "direct",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 3,
+      "Requests": 48556,
+      "Errors": 0,
+      "Seconds": 5.011856,
+      "RPS": 9688.227275484373,
+      "TotalMS": {
+        "P50": 5.4094,
+        "P95": 12.4977,
+        "P99": 15.62
+      },
+      "FirstMS": {
+        "P50": 1.4214,
+        "P95": 5.3505,
+        "P99": 7.5139
+      },
+      "ResidualMS": {
+        "P50": 0.3018,
+        "P95": 2.4198,
+        "P99": 4.0684
+      },
+      "FirstResidualMS": {
+        "P50": 0.3081,
+        "P95": 2.7678,
+        "P99": 4.6587
+      },
+      "CPUSeconds": 24.375,
+      "CPUCores": 4.863467745282387,
+      "PeakRSSBytes": 31993856,
+      "PeakDescriptors": 431,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 1,
+      "HostGoroutinesIdle": 69,
+      "HostGoroutinesPeak": 133,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "scheduler.single",
+      "Mode": "SSE",
+      "Concurrency": 64,
+      "Repeat": 3,
+      "Requests": 14604,
+      "Errors": 0,
+      "Seconds": 5.016244,
+      "RPS": 2911.341633301729,
+      "TotalMS": {
+        "P50": 21.4066,
+        "P95": 31.0435,
+        "P99": 35.2544
+      },
+      "FirstMS": {
+        "P50": 15.3766,
+        "P95": 24.7627,
+        "P99": 29.2022
+      },
+      "ResidualMS": {
+        "P50": 14.5305,
+        "P95": 23.4536,
+        "P99": 27.2209
+      },
+      "FirstResidualMS": {
+        "P50": 13.7575,
+        "P95": 22.8906,
+        "P99": 27.42
+      },
+      "CPUSeconds": 53.453125,
+      "CPUCores": 10.656005768459428,
+      "PeakRSSBytes": 162385920,
+      "PeakDescriptors": 1451,
+      "DescriptorKind": "Windows handles (not POSIX file descriptors)",
+      "Processes": 4,
+      "HostGoroutinesIdle": 95,
+      "HostGoroutinesPeak": 267,
+      "HostGoroutinesAfter": 31
+    }
+  ]
+}

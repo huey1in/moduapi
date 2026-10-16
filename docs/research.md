@@ -1,5 +1,12 @@
 # Source research before implementation
 
+The subsequent [competitive architecture audit](research/competitive-architecture-audit.md)
+extends this initial two-project study to APISIX, Envoy ext_proc, Bifrost, llm-d
+EPP, llmgate and LiteLLM, including current New API Task Plugin and Sub2API HostService
+contracts. Its pinned inventory and thirty-dimension matrix supersede any inference
+that these basic plugin/scheduling mechanisms are unique. See ADR 0009 before
+continuing the old feature roadmap.
+
 Read on 2026-10-16, pinned to:
 
 - [New API d032204](https://github.com/QuantumNous/new-api/tree/d032204733db31208f10bac118b6e683aab3bf29), root LICENSE: AGPL-3.0.

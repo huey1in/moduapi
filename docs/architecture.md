@@ -1,6 +1,14 @@
 # Architecture
 
-ModuAPI 0.1.0 implements a small, protocol-neutral HTTP kernel and three versioned plugin service kinds. Official implementations are processes, not imports into the host executable.
+Positioning review (baseline `a3f011d`): ModuAPI is an experimental **AI HTTP
+gateway construction kernel**, with a small mandatory business-domain surface.
+Runtime/deployment/latency lightness is not assumed. [ADR 0009](adr/0009-moduapi-positioning.md)
+pauses new plugin kinds pending [architecture validation](roadmap.md). See the
+[comparison audit](research/competitive-architecture-audit.md) and
+[E2E measurements](benchmarks/end-to-end.md). The implementation below is retained;
+this audit changes no production boundary.
+
+ModuAPI 0.1.0 implements an opaque-payload AI HTTP kernel and three versioned plugin service kinds. The envelope still knows models and token-shaped usage; it is not a universal protocol runtime. Official implementations are processes, not imports into the host executable.
 
 ```mermaid
 flowchart LR

@@ -1,5 +1,13 @@
 # Generic priority / weight / health scheduler
 
+Audit status: weighting, health, sticky and expiring reservations are established
+mechanisms, not ModuAPI innovations. This plugin demonstrates policy ownership
+outside the kernel. Select/Report replaces a whole policy; it does not compose
+llm-d-style Filter/Score/Pick sub-policies through the host. See the
+[competitive audit](../research/competitive-architecture-audit.md) and
+[E2E costs](../benchmarks/end-to-end.md). Feature expansion waits for the
+[positioning gates](../roadmap.md).
+
 `scheduler.priority-weight-health` is an optional official process. Kernel imports
 none of its implementation. No account, provider, quota, credential or billing
 entity appears in its wire inputs or policy.
