@@ -1,0 +1,15 @@
+server:
+  listen: "127.0.0.1:8080"
+plugins:
+  directory: "./dist/plugins"
+routes:
+  - id: default
+    protocol: openai.chat
+    model: "*"
+    upstreams: [default]
+    scheduler: scheduler.single
+upstreams:
+  default:
+    plugin: upstream.http
+    config:
+      base_url: "http://127.0.0.1:9090/v1"

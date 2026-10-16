@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package moduapi.plugin.v1;
+option go_package = "github.com/huey1in/moduapi/gen/plugin/v1;pluginv1";
+
+// Additive fields preserve v1 compatibility. Incompatible changes get a new package.
+service Lifecycle {
+  rpc Handshake(Hello) returns (Description);
+  rpc Configure(Configuration) returns (Empty);
+  rpc Health(Empty) returns (HealthStatus);
+  rpc Shutdown(Empty) returns (Empty);
+}
+service Protocol {
+  rpc Decode(Ingress) returns (Request);
+  rpc Prepare(Preparation) returns (Request);
+  // First input is the canonical request; remaining inputs are response frames.
+  // Exactly one start and one terminal (end/failure), with bounded data in between.
+  rpc Transform(stream TransformInput) returns (stream Frame);
+}
+service Upstream {
+  rpc Execute(Execution) returns (stream Frame);
+}
+service Scheduler {
+  rpc Select(SelectionInput) returns (Selection);
+  // Releases optional leases and records feedback, including cancelled attempts.
+  rpc Report(AttemptResult) returns (Empty);
+}
+
+message Empty {}
+message Hello { uint32 api_version = 1; string gateway_version = 2; repeated string capabilities = 3; }
+message Endpoint { string method = 1; string path = 2; string protocol = 3; }
+message Description {
+  string id = 1;
+  string version = 2;
+  uint32 api_version = 3;
+  repeated string provides = 4;
+  repeated string capabilities = 5;
+  repeated Endpoint endpoints = 6;
+}
+message Configuration { bytes json = 1; }
+message HealthStatus { bool ready = 1; }
+message Values { repeated string values = 1; }
+message Ingress {
+  string id = 1; string method = 2; string path = 3;
+  map<string, Values> headers = 4; bytes body = 5;
+}
+// Body is opaque protocol data. There are no chat messages, account or billing fields.
+message Request {
+  string id = 1; string protocol = 2; string model = 3; bool stream = 4;
+  string method = 5; string path = 6;
+  map<string, Values> headers = 7; bytes body = 8;
+  map<string, string> metadata = 9;
+}
+message Preparation { Request request = 1; bytes options_json = 2; }
+message Execution { Request request = 1; string upstream_id = 2; bytes config_json = 3; }
+message ResponseStart { int32 status = 1; map<string, Values> headers = 2; }
+message Usage { int64 input_tokens = 1; int64 output_tokens = 2; int64 cached_tokens = 3; bool partial = 4; }
+message ResponseEnd { Usage usage = 1; }
+// Public messages MUST be safe to expose. sent is conservative, not idempotency proof.
+message Failure { string kind = 1; string code = 2; string message = 3; int32 status = 4; bool request_sent = 5; Usage usage = 6; }
+message Frame {
+  oneof value { ResponseStart start = 1; bytes data = 2; ResponseEnd end = 3; Failure failure = 4; }
+}
+message TransformInput { oneof value { Request request = 1; Frame frame = 2; } }
+message Candidate { string id = 1; map<string, string> metadata = 2; int64 in_flight = 3; }
+message RequestInfo { string id = 1; string protocol = 2; string model = 3; map<string, string> metadata = 4; }
+message SelectionInput {
+  string route_id = 1; RequestInfo request = 2; repeated Candidate candidates = 3;
+  repeated string excluded_ids = 4; uint32 attempt = 5;
+}
+message Selection { string candidate_id = 1; string reason = 2; bool affinity_hit = 3; bytes lease = 4; }
+message AttemptResult {
+  string request_id = 1; string route_id = 2; string candidate_id = 3; uint32 attempt = 4;
+  int64 duration_ms = 5; int64 first_byte_ms = 6; int32 status = 7;
+  Failure failure = 8; bool committed = 9; int64 bytes_emitted = 10;
+  bytes lease = 11;
+}

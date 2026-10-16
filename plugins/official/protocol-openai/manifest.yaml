@@ -1,0 +1,18 @@
+api_version: 1
+id: protocol.openai
+name: OpenAI Chat Protocol
+version: 0.1.0
+runtime:
+  type: process
+  command: ./plugin
+provides: [protocol]
+requires:
+  gateway: ">=0.1.0 <1.0.0"
+capabilities: [streaming, usage]
+permissions:
+  network: []
+  storage: []
+  secrets: []
+config_schema:
+  type: object
+  additionalProperties: false

@@ -1,0 +1,5 @@
+/dist/
+/config.local.yaml
+*.test
+coverage.out
+*.log

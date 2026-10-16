@@ -1,0 +1,19 @@
+api_version: 1
+id: upstream.http
+name: HTTP Upstream
+version: 0.1.0
+runtime:
+  type: process
+  command: ./plugin
+provides: [upstream]
+requires:
+  gateway: ">=0.1.0 <1.0.0"
+capabilities: [streaming]
+permissions:
+  # Demo transport allows configured hosts. Restrict this in your deployment.
+  network: ["*"]
+  storage: []
+  secrets: []
+config_schema:
+  type: object
+  additionalProperties: false

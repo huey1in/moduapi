@@ -1,0 +1,21 @@
+server:
+  listen: "127.0.0.1:8080"
+plugins:
+  directory: "../dist/plugins"
+routes:
+  - id: balanced
+    protocol: openai.chat
+    model: "*"
+    upstreams: [a, b]
+    scheduler: scheduler.roundrobin
+    # Replay may incur duplicate upstream work/cost. Disabled unless explicit.
+    retry: {max_attempts: 2, allow_replay: true}
+upstreams:
+  a:
+    plugin: upstream.http
+    config: {base_url: "http://127.0.0.1:9090/v1"}
+    metadata: {priority: "10", weight: "3"}
+  b:
+    plugin: upstream.http
+    config: {base_url: "http://127.0.0.1:9091/v1"}
+    metadata: {priority: "5", weight: "1"}

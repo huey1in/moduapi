@@ -1,0 +1,13 @@
+api_version: 1
+id: scheduler.roundrobin
+name: Round Robin Scheduler
+version: 0.1.0
+runtime:
+  type: process
+  command: ./plugin
+provides: [scheduler]
+requires:
+  gateway: ">=0.1.0 <1.0.0"
+capabilities: []
+permissions: {network: [], storage: [], secrets: []}
+config_schema: {type: object, additionalProperties: false}
