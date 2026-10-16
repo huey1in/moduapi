@@ -9,7 +9,7 @@ versions in the committed requirements file. No external model APIs were called.
 | `go test ./...` | PASS; final integration package 63.976s |
 | `go test -race ./...` | PASS; final integration package 126.793s; child Go plugins/CLI instrumented |
 | `go vet ./...` | PASS |
-| `make conformance` | PASS; race-enabled Go host ↔ real Python processes, 9.724s |
+| `make conformance` | PASS; race-enabled Go host ↔ real Python processes, 9.786s |
 | `go run ./tools/build` | PASS; host + five official process bundles |
 | Advanced manifest CLI validation | PASS |
 | Scheduler benchmark matrix | PASS; 10/100/1000 candidates, 1/10/100/1000 workers |

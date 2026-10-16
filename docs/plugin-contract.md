@@ -12,7 +12,7 @@ require a new versioned package. Add fields/methods without renumbering existing
 fields; reserve retired numbers. Preserve unknown protobuf fields on pass-through
 messages. Unknown fields are not errors; an unknown Frame oneof alternative alone
 cannot be interpreted as a valid frame. JSON conversion is not wire pass-through.
-Both directions are exercised with manually appended wire fields 19000/19001.
+Both directions are exercised with manually appended wire fields 50000/50001.
 See [protobuf guidance](https://protobuf.dev/programming-guides/proto3/#unknowns).
 
 Host sends supported capabilities in Hello. Plugin returns the intersection with

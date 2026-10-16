@@ -96,9 +96,9 @@ class Reference(rpc.LifecycleServicer, rpc.ProtocolServicer,
         self.work(ctx)
         out = pb.Request()
         out.CopyFrom(req.request)
-        if unknown(19000) in req.request.SerializeToString():
+        if unknown(50000) in req.request.SerializeToString():
             out.metadata["unknown_seen"] = "yes"
-        out.ParseFromString(out.SerializeToString() + unknown(19001))
+        out.ParseFromString(out.SerializeToString() + unknown(50001))
         return out
 
     def error(self, mode, ctx):

@@ -135,7 +135,8 @@ func TestUnknownWireFields(t *testing.T) {
 	p, _ := start(t, "normal")
 	original := &pb.Request{Id: "wire", Protocol: "test.echo", Model: "normal"}
 	wire, _ := proto.Marshal(original)
-	wire = protowire.AppendTag(wire, 19000, protowire.VarintType)
+	// Application field numbers, outside protobuf's implementation-reserved range.
+	wire = protowire.AppendTag(wire, 50000, protowire.VarintType)
 	wire = protowire.AppendVarint(wire, 7)
 	req := &pb.Request{}
 	if e := proto.Unmarshal(wire, req); e != nil {
@@ -160,7 +161,7 @@ func TestUnknownWireFields(t *testing.T) {
 		seen[n] = true
 		unknown = unknown[v:]
 	}
-	if !seen[19000] || !seen[19001] {
+	if !seen[50000] || !seen[50001] {
 		t.Fatalf("Python → Go unknown fields not preserved: %v", seen)
 	}
 }
