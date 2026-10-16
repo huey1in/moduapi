@@ -66,12 +66,14 @@ real request. It reduces assembly to four exported operations (`Start`,
 `Ready`, `ServeHTTP`, `Close`), but it does not remove host responsibilities:
 listener/TLS, configuration, deployment, credentials/authentication, and
 application tests remain outside the Kernel. The API is not declared stable.
+The actual consumer surface includes `core/config` and `core/router`, not just
+four operations; see the [embedding API review](validation/embedding-api-review.md).
 
 The Linux placement experiment compared split (Kernel + three processes),
 bundle (Kernel + one multi-service process), local (in-process control), and a
 direct mock. It measured total/first-byte/residual latency, RPS, CPU, RSS, FDs,
 slow consumers, continuous cancellation, crash/restart and a 30-second mixed
-run. The raw records and method are in [Phase 3A validation](../validation/phase-3a.md).
+run. The raw records and method are in [Phase 3A validation](validation/phase-3a.md).
 The key result is a placement trade-off, not a universal advantage: bundle
 roughly halves small-body process/RSS/FD costs relative to split, while large
 bodies still amplify copies and buffering. The residual is the whole gateway
@@ -83,6 +85,26 @@ integrator that needs to release protocol, transport and selection components
 independently across languages may save host coupling and lifecycle work. The
 repository has not yet measured that saving against an independent adopter's
 existing APISIX/ext_proc, Bifrost, llmgate, LiteLLM, New API or Sub2API design.
-The [exit gate](../validation/phase-3a-exit-gate.md) therefore remains
+The [exit gate](validation/phase-3a-exit-gate.md) therefore remains
 **CONDITIONAL GO**, with STOP as the correct outcome if that requirement does not
 appear.
+
+## External-demand closeout
+
+The 2026-10-17 [public-source investigation](research/external-demand-validation.md)
+records ten dated, attributed leads/counterexamples. It finds genuine separate
+extension requests, but **no confirmed independent ModuAPI component author or
+embedder**, no participant-owned savings measurement, and no source proving the
+combined three-component/process requirement. Resolved Envoy/Bifrost/llm-d
+cases are retained as counterevidence. All leads are UNVERIFIED; no messages
+were sent. The [alternatives review](validation/phase-3a-alternatives.md)
+distinguishes source facts, engineering estimates and unknown implementation costs.
+
+[Author](validation/component-author-validation.md) and
+[host](validation/embedding-host-validation.md) briefs include reproducible
+examples, interview questions and a shared cost template. They prepare a trial;
+they do not replace an external participant. The
+[workload assessment](validation/phase-3a-workload-fit.md) documents where
+external placement is a plausible fit and where its cost is material. Dedicated
+native Linux is **BLOCKED**, so GO remains unavailable. Only bounded evidence
+collection continues, with no feature or API development.

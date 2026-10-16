@@ -44,3 +44,28 @@ Embedding removes the reference executable/listener requirement but does not
 remove process startup, configuration, credentials, or host operations. Bundle
 placement reduces process/RSS/FD overhead without removing serialization. The
 public API remains experimental until an external host uses it.
+
+## External-demand closeout, 2026-10-17 (`dfde6e6`)
+
+The [demand review](../research/external-demand-validation.md) records ten
+public leads/counterexamples with original sources, authors, dates and existing
+alternatives. All are UNVERIFIED as ModuAPI requirements. There are zero
+confirmed component authors and zero confirmed embedding hosts; no outreach
+was sent. Separate requests cannot be combined into a synthetic adopter.
+Some apparent gaps were already solved by Envoy/Bifrost/llm-d, and foreign
+callbacks requested by a go-plugin author are not supplied by ModuAPI either.
+
+The [same-task comparison](../validation/phase-3a-alternatives.md) separates
+source facts, engineering work inventories and unknown implementation costs.
+It does not establish saved LOC/hours. The documented external-module example
+improves reproducibility without replacing participant evidence. Retain
+`embedding` experimentally; do not stabilize its core/config/router dependency
+surface without a qualifying host. No breaking or additive API work is made.
+
+Dedicated native Linux repeat is **BLOCKED**. Existing WSL2 1MiB p95 results
+are a material workload restriction, not an ignorable AI inference surcharge.
+The original gate thresholds remain unchanged. Decision stays **CONDITIONAL
+GO for evidence collection only**, with a proposed final evidence review on
+2026-11-07. No qualified demand after the bounded window means STOP; absence
+of permission/participants today is not fabricated into a completed interview.
+Auth/Secret/Middleware/Usage and all product expansion remain paused.

@@ -2,7 +2,9 @@
 
 Decision basis: [ADR 0009](adr/0009-moduapi-positioning.md),
 [source audit](research/competitive-architecture-audit.md),
-[E2E experiment](benchmarks/end-to-end.md). Baseline `71d69e6`; Phase 3A raw evidence is in `docs/validation/`.
+[E2E experiment](benchmarks/end-to-end.md). Engineering baseline `71d69e6`;
+demand closeout baseline `dfde6e6` (2026-10-17). Phase 3A raw evidence is in
+`docs/validation/`.
 
 ## Completed foundations
 
@@ -24,19 +26,33 @@ comparison, commodity/differentiation classification, trust and boundary review,
 real four-topology E2E harness/measurements, independent protocol, embedding and
 placement validation. The current [exit gate](validation/phase-3a-exit-gate.md)
 is **CONDITIONAL GO**: the engineering checks pass, but independent adopter
-evidence and a dedicated-host repeat are still required.
+evidence and a dedicated-host repeat are still required. The
+[public-demand review](research/external-demand-validation.md) is complete:
+ten traceable leads/counterexamples, **zero confirmed independent component
+authors, zero confirmed independent embedding hosts**. All public leads remain
+UNVERIFIED. No external contact was sent or authorized. The native dedicated
+Linux repeat is **BLOCKED**, not substituted by WSL2 or shared CI.
 
-**Next experiments, not implemented by the audit:**
+**Only remaining work: evidence collection, no feature/API development.**
 
 1. Obtain two concrete integration specifications: an independent component author
    and an embedder. Compare effort with a Bifrost library assembly and APISIX/Envoy
-   extension. Confirm independent language/release/fault boundaries are required.
+   extension using the [same-task comparison](validation/phase-3a-alternatives.md)
+   and [cost record](validation/integration-cost-record.md). Confirm independent
+   language/release/fault boundaries are required. [Component-author](validation/component-author-validation.md)
+   and [embedding-host](validation/embedding-host-validation.md) briefs are ready;
+   publication/contact still requires explicit authorization.
 2. Repeat the placement experiment on a dedicated native Linux host with CPU/heap
    profiles and the same raw workloads. Keep split/bundle/local evidence separate.
-3. Decide whether the experimental embedding surface is narrow enough to retain;
-   do not call it stable without an external integration.
-4. If either requirement is absent, choose STOP and preserve the conformance,
-   benchmark and research artifacts without adding features.
+3. Retain the experimental embedding Handler for validation. The
+   [API review](validation/embedding-api-review.md) recommends narrowing its
+   exposed configuration only against a qualifying external host; implement
+   no change now. Current API/export count does not prove stability.
+4. Proposed final evidence review: **2026-11-07**, at most five candidate
+   projects, no automatic outreach or rolling extension. If neither cohort
+   qualifies after the bounded validation, choose STOP and preserve research
+   and regression artifacts. One qualifying cohort still fails GO and supports
+   at most an explicitly evaluated narrow pivot, not feature development.
 
 Proposed acceptance hypotheses, to confirm against prospective workloads:
 
@@ -66,7 +82,7 @@ merely to make the runtime look complete.
 
 | Area | Remaining limit |
 |---|---|
-| Positioning | Specific combination exists; independent demand/embedding/protocol interchange unproven |
+| Positioning | Engineering interchange/experimental embedding demonstrated; independent demand and net integration savings unproven; public leads all UNVERIFIED |
 | Public API | Three tested wire services; public Go composition API not stable; future kind sketches are not commitments |
 | Placement | Six business RPCs; six request-body wire legs and three response-data legs; native Linux and profile repeat still outstanding |
 | Packaging/readiness | All discovered bundles start and are required, even unused ones; stock directory runs six processes |
@@ -80,7 +96,7 @@ merely to make the runtime look complete.
 | Security | Trusted same-user processes/interpreters; cooperative permissions, no hostile-plugin confinement |
 | Protocol/body | Two reference protocols; buffered capped ingress, JSON/SSE limits; no uploads/spooling/WebSocket/resumption |
 | Usage | Best-effort token summary; disconnect cancels upstream; no durable accounting |
-| Release | Owner-selected LICENSE missing; no independent adopters/installer/SBOM/release compatibility matrix |
+| Release | Owner-selected LICENSE missing (adoption/distribution blocker); no independent adopters/installer/SBOM/release compatibility matrix |
 
 The audit adds evidence and a measurement tool. It does not resolve these limits
 through feature expansion or a hidden production refactor.

@@ -126,3 +126,12 @@ and [the exit gate](validation/phase-3a-exit-gate.md). The measured residual is
 the full gateway path; it is not labelled as an isolated gRPC surcharge.
 
 Phase 3A's bounded decision is recorded in [ADR 0010](adr/0010-phase-3a-validation.md).
+
+The [external-demand closeout](research/external-demand-validation.md) found
+public extension needs but no confirmed independent ModuAPI integrator or
+measured savings against an existing solution. The
+[embedding review](validation/embedding-api-review.md) retains the Handler seam
+experimentally; `core/config` and `core/router` remain consumer dependencies,
+not a stability promise. Dedicated native Linux validation is BLOCKED; WSL2
+records cannot discharge it. CONDITIONAL GO permits evidence collection only,
+with all feature work still paused.

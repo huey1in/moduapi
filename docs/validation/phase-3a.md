@@ -15,16 +15,20 @@ Core package has no Anthropic branch and the protobuf file is unchanged.
 
 The external-package test in [`embedding/embedding_test.go`](../../embedding/embedding_test.go)
 imports `embedding`, `core/config` and `core/router`, starts a runtime, serves a
-real request through an `httptest` listener and closes it. It is written as
+request through an `httptest.ResponseRecorder` and closes it. It is written as
 package `embedding_test`, so it cannot use unexported identifiers from the
 embedding package. The build/mock helpers are test fixtures; they are not part
-of the proposed consumer API.
+of the proposed consumer API. This test does not create a downstream listener
+or prove an independent module can consume the API. The later documentation-only
+[external-module reproduction](embedding-host-validation.md) uses standard-library
+mocks and real HTTP listeners without importing internal helpers; it is still
+an internal validation exercise, not external demand evidence.
 
 The measured assembly work is small but not zero:
 
 | Integration task | Measured artifact | LOC | What it proves |
 |---|---|---:|---|
-| Embed a reference gateway | external Go test | 52 | listener ownership and `ServeHTTP` composition are sufficient for a real request |
+| Embed a reference gateway | external Go test | 52 | Handler composition and process request path; separate-module/listener check is documented in the later host brief |
 | Add a second protocol | Python process | 292 | protocol parsing, stream validation and usage semantics can live outside Core |
 | Exercise the process contract | Go conformance test | 123 | independent protocol can use existing scheduler/upstream services |
 | In-process placement control | audit-only adapter | 105 | local execution can be compared without changing production Registry/SPI |
@@ -86,12 +90,14 @@ complete topologies, so they still are not causal microbenchmarks of one gRPC
 call or one copy.
 
 For c16 1KiB JSON, the median p95 comparisons are approximately 2.4ms direct,
-4.0ms local, 7.2ms bundle and 7.3ms split. That bounds the local Kernel portion
-near 1.6ms and the external bundle portion near 3.2ms for this workload; the
+4.0ms local, 7.2ms bundle and 7.3ms split. The differences of these summary
+quantiles are near 1.6ms and 3.2ms respectively for this workload; they are not
+per-request decompositions or causal upper bounds on Kernel/IPC cost. The
 extra split process separation is below the run's rounding noise. At 1MiB,
 the corresponding values are about 13ms, 31ms, 114ms and 110ms, showing that
-serialization/buffering dominates and that process attribution is unstable at
-large payloads. CPU, RSS and FD columns expose the separate multi-process
+large-payload placement is costly and process attribution is unstable. Extra
+serialization/buffering is a plausible mechanism, not a profiled attribution.
+CPU, RSS and FD columns expose the aggregate multi-process
 management cost directly.
 
 At concurrency 16, medians across the two repetitions were:
