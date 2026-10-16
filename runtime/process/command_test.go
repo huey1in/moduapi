@@ -15,8 +15,20 @@ func TestPackageCommandBoundary(t *testing.T) {
 	}
 	m := manifest.Manifest{Path: filepath.Join(root, "manifest.yaml"), Runtime: manifest.Runtime{Type: "interpreter", Interpreter: "python", Command: "plugin.py"}}
 	got, e := executable(m)
-	if e != nil || got != script {
+	if e != nil {
 		t.Fatalf("%s %v", got, e)
+	}
+	// Windows can canonicalize casing or expand an 8.3 temp-directory alias.
+	actual, err := os.Stat(got)
+	if err != nil {
+		t.Fatal(err)
+	}
+	expected, err := os.Stat(script)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !os.SameFile(actual, expected) {
+		t.Fatal("resolved a different package file")
 	}
 	outside := filepath.Join(t.TempDir(), "outside.py")
 	_ = os.WriteFile(outside, []byte("pass"), 0600)

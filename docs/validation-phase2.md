@@ -47,6 +47,11 @@ local policy benchmark, not an end-to-end gateway throughput target. CI includes
 Go tests and Python conformance on Windows and Linux; remote results are available
 in the repository's Actions runs and are separate from this local report.
 
+Windows CI exposed a test-only path assumption: EvalSymlinks may normalize casing
+or expand an 8.3 temporary-directory alias. The command-boundary test now compares
+file identity with os.SameFile; the runtime's package/symlink containment check is
+unchanged. Local ordinary/race/vet checks were rerun after this correction.
+
 Known limits remain explicit: conservative overlapping snapshot/reservation counts,
 best-effort Report + TTL recovery, local state reset on restart, no OS sandbox,
 restricted stderr event vocabulary, no live diagnostics CLI or required validation
