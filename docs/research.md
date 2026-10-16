@@ -51,3 +51,38 @@ Files read: `gateway_handler.go`, `openai_gateway_handler.go`, `gateway_handler_
 ## Consequences for this slice
 
 Separate router, scheduler, retry policy and transport. Make all calls cancellable. Bound bodies, frame sizes, startup, first byte, idle reads, writes, request duration and shutdown. Preserve opaque protocol data on the common path; do not decode/re-encode the request on every hop. Require explicit opt-in to replay potentially billable POSTs. Stream through bounded gRPC flow control. Exercise real plugin processes against a local mock, including cancellations and crashes.
+
+## Phase 3A validation evidence
+
+The audit's remaining hypothesis was tested instead of inferred. A second,
+independent Python Anthropic Messages reference process uses only generated
+protobuf/gRPC bindings and passes through the unchanged Core with the generic
+HTTP upstream and scheduler. This is composition evidence, not a claim that
+Anthropic support itself is a ModuAPI feature.
+
+The experimental `embedding` package lets an external Go package own the
+listener and compose `ServeHTTP`. The test is in an external package and uses a
+real request. It reduces assembly to four exported operations (`Start`,
+`Ready`, `ServeHTTP`, `Close`), but it does not remove host responsibilities:
+listener/TLS, configuration, deployment, credentials/authentication, and
+application tests remain outside the Kernel. The API is not declared stable.
+
+The Linux placement experiment compared split (Kernel + three processes),
+bundle (Kernel + one multi-service process), local (in-process control), and a
+direct mock. It measured total/first-byte/residual latency, RPS, CPU, RSS, FDs,
+slow consumers, continuous cancellation, crash/restart and a 30-second mixed
+run. The raw records and method are in [Phase 3A validation](../validation/phase-3a.md).
+The key result is a placement trade-off, not a universal advantage: bundle
+roughly halves small-body process/RSS/FD costs relative to split, while large
+bodies still amplify copies and buffering. The residual is the whole gateway
+path; it cannot be honestly attributed to gRPC without an ablation that was not
+performed.
+
+This leaves a narrow, falsifiable value proposition: a trusted operator or
+integrator that needs to release protocol, transport and selection components
+independently across languages may save host coupling and lifecycle work. The
+repository has not yet measured that saving against an independent adopter's
+existing APISIX/ext_proc, Bifrost, llmgate, LiteLLM, New API or Sub2API design.
+The [exit gate](../validation/phase-3a-exit-gate.md) therefore remains
+**CONDITIONAL GO**, with STOP as the correct outcome if that requirement does not
+appear.

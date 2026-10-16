@@ -1,0 +1,19 @@
+api_version: 1
+id: protocol.anthropic-reference
+name: Messages protocol boundary reference
+version: 0.1.0
+runtime:
+  type: interpreter
+  interpreter: python
+  command: plugin.py
+provides: [protocol]
+requires:
+  gateway: ">=0.1.0 <1.0.0"
+capabilities: [streaming, usage]
+permissions:
+  network: []
+  storage: []
+  secrets: []
+config_schema:
+  type: object
+  additionalProperties: false

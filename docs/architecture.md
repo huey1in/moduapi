@@ -1,6 +1,6 @@
 # Architecture
 
-Positioning review (baseline `a3f011d`): ModuAPI is an experimental **AI HTTP
+Positioning review (baseline `71d69e6`, Phase 3A working tree): ModuAPI is an experimental **AI HTTP
 gateway construction kernel**, with a small mandatory business-domain surface.
 Runtime/deployment/latency lightness is not assumed. [ADR 0009](adr/0009-moduapi-positioning.md)
 pauses new plugin kinds pending [architecture validation](roadmap.md). See the
@@ -103,3 +103,26 @@ Startup failure rolls back earlier children. Failed startup is killed immediatel
 See ADRs [0001](adr/0001-core-boundary.md), [0002](adr/0002-plugin-runtime.md), [0003](adr/0003-request-lifecycle.md), [0004](adr/0004-protocol-upstream-separation.md), [0005](adr/0005-scheduler-boundary.md) and the [roadmap](roadmap.md).
 
 Phase 2 freezes the [cross-language contract](plugin-contract.md) through a real Python process and keeps protobuf v1 fields/services unchanged. Native binaries and interpreter scripts share lifecycle/registry semantics. ADRs [0006](adr/0006-cross-language-plugin-contract.md), [0007](adr/0007-scheduler-policy-and-admission.md), [0008](adr/0008-runtime-supervision-and-private-diagnostics.md) record these extensions.
+
+## Phase 3A validation boundary
+
+The reference Anthropic Messages protocol is an independent Python process in
+[`plugins/reference/protocol-anthropic`](../plugins/reference/protocol-anthropic/README.md).
+It uses only generated protobuf/gRPC bindings and exercises the unchanged
+Protocol service; no OpenAI or Anthropic semantic branch exists in `core/`.
+This is a conformance fixture, not a commitment to a second official provider.
+
+The experimental [`embedding`](../embedding/embedding.go) package exposes
+`Start`, `Ready`, `ServeHTTP` and `Close` so a Go host can own its listener and
+compose the Kernel as a handler. It is a candidate public surface validated by
+an external-package test, not a stable API. `internal/app` remains internal.
+
+Execution placement is an independent decision from service composition. The
+Phase 3A harness compares split processes, one bundle process providing all
+three typed services, and an in-process audit control. The contract permits a
+bundle; the Kernel does not require one process per service. Raw Linux results
+and the explicit decision rules are in [the validation report](validation/phase-3a.md)
+and [the exit gate](validation/phase-3a-exit-gate.md). The measured residual is
+the full gateway path; it is not labelled as an isolated gRPC surcharge.
+
+Phase 3A's bounded decision is recorded in [ADR 0010](adr/0010-phase-3a-validation.md).

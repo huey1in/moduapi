@@ -11,7 +11,7 @@ Read the [source audit](docs/research/competitive-architecture-audit.md),
 
 ModuAPI keeps the HTTP runtime small and runs protocol, upstream and scheduling implementations as independent processes. Install only the capabilities you need. The kernel starts without a database, Redis, users, authentication management, billing or an admin UI.
 
-Phase 2 preserves the first runnable vertical slice and hardens its cross-language contract: OpenAI Chat Completions → router → scheduler → generic HTTP upstream → JSON/SSE. It is an initial implementation, not a production hardening claim.
+Phase 2 preserves the first runnable vertical slice and hardens its cross-language contract: OpenAI Chat Completions → router → scheduler → generic HTTP upstream → JSON/SSE. It is an initial implementation, not a production hardening claim. Phase 3A adds an independent Python Anthropic Messages reference, an experimental Go embedding API, and placement validation; it is an evidence-gathering phase, not product expansion.
 
 ## Run locally
 
@@ -112,6 +112,12 @@ make conformance # Python 3.11+, isolated pinned virtualenv
 # Portable equivalent: go run ./tools/conformance
 ```
 
+The Phase 3A placement experiment is intentionally separate from ordinary
+tests. Cross-compile the audit harness for Linux and follow the reproducible
+commands in [the validation report](docs/validation/phase-3a.md); raw results
+are kept beside the report. The current decision is [CONDITIONAL GO](docs/validation/phase-3a-exit-gate.md),
+pending independent integration requirements and a dedicated-host repeat.
+
 Integration tests build and launch the five actual plugin binaries, use local mock HTTP servers, and instrument child binaries during the race run. They cover streaming before completion, cancellation, deadlines, replay opt-in, failure isolation, negotiation, environment grants, cleanup and restart. Tests do not call OpenAI or Anthropic.
 
 ## Design and next work
@@ -126,5 +132,7 @@ Integration tests build and launch the five actual plugin binaries, use local mo
 - [Current limitations and next milestones](docs/roadmap.md)
 - [Phase 1 validation results](docs/validation.md)
 - [Phase 2 validation and benchmark results](docs/validation-phase2.md)
+- [Phase 3A composition and placement validation](docs/validation/phase-3a.md)
+- [Phase 3A exit gate](docs/validation/phase-3a-exit-gate.md)
 
 Only gRPC, protobuf and YAML parsing are direct dependencies. No code or generated contracts from New API/Sub2API are included. The repository owner still needs to choose ModuAPI's distribution license before a public release.

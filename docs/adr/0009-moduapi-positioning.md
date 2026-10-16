@@ -156,3 +156,22 @@ be demonstrated, choose Stop or a specifically justified host adapter. No automa
 return to Auth/Secret/Middleware/Usage follows this audit. The core competence to
 validate is **safe, replaceable component composition**, not a new weighted scheduler
 or a generic plugin ecosystem.
+
+## Phase 3A result
+
+The follow-up validation adds no PluginKind and no protobuf revision. A Python
+Anthropic Messages reference process passes the existing Protocol contract, an
+external Go package serves a real request through the experimental embedding
+surface, and Linux records compare split, bundle and in-process placement. The
+checks establish that Protocol/Upstream/Scheduler can be independently replaced
+and that a bundle process is a materially cheaper placement than three plugin
+processes. They also expose substantial large-body and process/RSS costs; the
+residual is the complete gateway path, not an isolated gRPC number.
+
+The decision is **CONDITIONAL GO**, recorded in the [Phase 3A exit gate](../validation/phase-3a-exit-gate.md).
+That decision authorizes only two further validation tasks: obtain independent
+component-author and embedding-host requirements, and repeat the placement
+experiment on a dedicated Linux host with profiles. It does not authorize Auth,
+Secret, Middleware, Usage, storage, new plugin kinds, or a stable public API.
+If those requirements do not materialize, STOP and retain the research and
+regression artifacts rather than expanding the Kernel.

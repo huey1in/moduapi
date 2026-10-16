@@ -120,3 +120,45 @@ guarantee exists. Scheduler process restart discards its local state.
 Run `make conformance` (or `go run ./tools/conformance` on any platform) to create a
 private virtualenv, install pinned dependencies, regenerate Python bindings and run
 the race-enabled Go↔Python suite. Ordinary `go test ./...` never requires Python.
+
+## Independent protocol validation
+
+The reference [Anthropic Messages process](../plugins/reference/protocol-anthropic/README.md)
+implements this contract without the Go SDK. It demonstrates that a protocol
+author can choose another language, preserve opaque request bytes, interpret a
+different JSON/SSE vocabulary, and still use the existing generic HTTP upstream
+and scheduler. Its manifest uses `runtime.type: interpreter`; the host resolves
+the interpreter from PATH or an explicitly configured absolute path while the
+script remains package-local. This is a reference subset, not a complete
+provider implementation.
+
+`make conformance` includes both the original Python lifecycle fixture and the
+Anthropic process/gateway test. The latter starts a real plugin process and a
+real mock Messages endpoint, then exercises non-stream and SSE requests. No
+Core code or protobuf revision is required to add the endpoint.
+
+## Experimental embedding surface
+
+The [`embedding`](../embedding/embedding.go) package is intentionally small:
+
+```go
+rt, err := embedding.Start(ctx, config)
+defer rt.Close(shutdownCtx)
+http.HandleFunc("/", rt.ServeHTTP)
+```
+
+The host owns the HTTP listener, TLS, HTTP server drain, and admission policy.
+`Start` starts the configured process bundles; `ServeHTTP` binds request
+cancellation to the runtime; `Close` rejects new requests, cancels admitted
+ones, stops children and waits for reaping. The package is an experimental
+candidate API. Its exported names may change after the Phase 3A integration
+evidence; `internal/app`, registry implementation details and official plugin
+packages remain internal implementation choices.
+
+## Placement
+
+Protocol, Scheduler and Upstream are typed services, not a process-count
+prescription. A single package may provide all three services. Phase 3A records
+the split/bundle/in-process trade-off and keeps the v1 stream and cancellation
+semantics identical across placements. Process isolation is still trusted
+operator isolation, not an untrusted-code sandbox.

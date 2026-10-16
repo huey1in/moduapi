@@ -327,22 +327,26 @@ The next stage is a **validation budget, not authorization to add features**:
 2. Reproduce E2E on a dedicated Linux host; add larger bodies/slow consumers and
    compare an existing multi-service bundle and a temporary in-process control.
    Inspect CPU/allocation profiles before proposing boundary changes.
-3. Demonstrate a second independently authored protocol using existing services,
-   preserving unknown payloads, cancellation and retry safety without kernel edits.
-   This is a proposed future validation experiment, not implemented in this audit.
-4. Demonstrate external Go embedding using public packages and only then specify
-   the smallest public composition API. Keep lifecycle safety invariant across any
-   execution placement. Do not commit to a generic pipeline or HostService expansion.
+3. The Phase 3A Python Anthropic reference now demonstrates a second protocol using
+   existing services, preserving unknown payloads, cancellation and stream safety
+   without kernel edits.
+4. The Phase 3A external-package embedding test validates the experimental
+   `embedding` surface. It remains non-stable until an independent host uses it.
+   Keep lifecycle safety invariant across any execution placement; do not commit
+   to a generic pipeline or HostService expansion.
 
-Proposed engineering gates (hypotheses to confirm with users): for a 1KiB local
-payload at concurrency 16 on the agreed Linux host, gateway-added p95 <= 5ms and
-minimum four-process idle RSS <= 128MiB; preserve zero contract regressions and
-no monotonic goroutine/FD growth in a 30-minute cancellation/slow-consumer run.
-Current Windows measurements do **not** establish these Linux gates. If users need
-sub-ms overhead or a single process and component isolation provides no benefit,
-recommend an existing in-process gateway rather than rationalize the cost. If no
-independent integration need or acceptable measured execution profile emerges,
-choose Stop; do not reopen the Auth/Billing/Admin backlog to manufacture demand.
+The Phase 3A gate now uses explicit Linux bounds: c16 1KiB JSON p95 <= 8ms and
+SSE p95 <= 12ms for split and bundle, zero ownership errors, and a material
+bundle reduction in processes/RSS/FDs. Larger bodies, CPU, TTFB, slow consumers,
+cancellation, crash/restart and a 30-second mixed run are recorded as evidence,
+not hidden behind a single residual. The current WSL run meets those engineering
+checks, but it is not a dedicated-host SLA and no independent integration need
+has been shown. See [Phase 3A validation](../validation/phase-3a.md) and the
+[exit gate](../validation/phase-3a-exit-gate.md). If users need sub-ms overhead or
+a single process and component isolation provides no benefit, recommend an
+existing in-process gateway rather than rationalize the cost. If no independent
+integration need emerges, choose Stop; do not reopen the Auth/Billing/Admin
+backlog to manufacture demand.
 
 The [roadmap](../roadmap.md) and ADR 0009 make this stop condition explicit. There
 is a verifiable combination to test, but no defensible claim of a new algorithm,

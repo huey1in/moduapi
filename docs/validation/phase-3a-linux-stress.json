@@ -1,0 +1,6620 @@
+{
+  "Baseline": "71d69e6",
+  "Experiment": "phase-3a-placement-validation-working-tree",
+  "Go": "go1.27.2",
+  "OS": "linux",
+  "Arch": "amd64",
+  "CPU": "Intel(R) Core(TM) i9-14900HX",
+  "LogicalCPUs": 32,
+  "GOMAXPROCS": 32,
+  "StartedUTC": "2026-10-16T17:19:45Z",
+  "Options": {
+    "Role": "run",
+    "Bundles": "/mnt/host/c/Users/29269/Downloads/moduapi/dist/audit-linux/plugins",
+    "Scheduler": "scheduler.single",
+    "Upstream": "",
+    "Out": "/mnt/host/c/Users/29269/Downloads/moduapi/docs/validation/phase-3a-linux-stress.json",
+    "Concurrency": "4",
+    "Topologies": "split,bundle,local",
+    "Scenarios": "slow,cancel,crash",
+    "Scenario": "json1k",
+    "BodyBytes": 1024,
+    "Soak": 0,
+    "Duration": 10000000000,
+    "Warmup": 1000000000,
+    "Repeats": 1,
+    "Build": false
+  },
+  "Results": [
+    {
+      "Topology": "split",
+      "Mode": "SSE",
+      "Scenario": "slow",
+      "BodyBytes": 1024,
+      "Cancellations": 0,
+      "ResourceSamples": [
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 100937728,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 100937728,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 142880768,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 157036544,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 165687296,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 180891648,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 185872384,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 190590976,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 49,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 192688128,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 193212416,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 45,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 193212416,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 193212416,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 193212416,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 193212416,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 193212416,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 194478080,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 129937408,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 125624320,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 156020736,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 178565120,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 183545856,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 194555904,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 202158080,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 204460032,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 205770752,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 205770752,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 205770752,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 205770752,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 205770752,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 205770752,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 205770752,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 205721600,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 138285056,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 119525376,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 152555520,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 171429888,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 179032064,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 185061376,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 198430720,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 199479296,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 198656000,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 198656000,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 198656000,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 198918144,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 198918144,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 198918144,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 198918144,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 203374592,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 121241600,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 121073664,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 171929600,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 171929600,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 185823232,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 191852544,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 193687552,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 196571136,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 199192576,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 45,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 202600448,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 41,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 202600448,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 202600448,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 202600448,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 202600448,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 202600448,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 202600448,
+          "Descriptors": 52,
+          "PIDs": [
+            3731,
+            3746,
+            3752,
+            3758
+          ]
+        }
+      ],
+      "RecoveryMS": 0,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 8,
+        "Active": 0,
+        "Cancelled": 0,
+        "MaxActive": 4,
+        "RSS": 16203776,
+        "Descriptors": 12,
+        "PIDs": [
+          3724
+        ]
+      },
+      "StartupMS": 382.72606,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 16,
+      "Errors": 0,
+      "Seconds": 12.909700768,
+      "RPS": 1.2393780682864546,
+      "TotalMS": {
+        "P50": 3154.942443,
+        "P95": 3318.696633,
+        "P99": 3318.696633
+      },
+      "FirstMS": {
+        "P50": 4.008328,
+        "P95": 5.092834,
+        "P99": 5.092834
+      },
+      "ResidualMS": {
+        "P50": 2669.11878,
+        "P95": 2708.347752,
+        "P99": 2708.347752
+      },
+      "FirstResidualMS": {
+        "P50": 2.742177,
+        "P95": 3.774953,
+        "P99": 3.774953
+      },
+      "CPUSeconds": 9.46,
+      "CPUCores": 0.7327822828743663,
+      "PeakRSSBytes": 205770752,
+      "PeakDescriptors": 51,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 35,
+      "HostGoroutinesPeak": 51,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "bundle",
+      "Mode": "SSE",
+      "Scenario": "slow",
+      "BodyBytes": 1024,
+      "Cancellations": 0,
+      "ResourceSamples": [
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 76685312,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 76685312,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 118628352,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 132521984,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 145104896,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 150085632,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 156901376,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 161095680,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 29,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 168173568,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 178659328,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 23,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 178659328,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 178659328,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 178659328,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 178659328,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 178659328,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 179183616,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 83456000,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68284416,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 103149568,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 135655424,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 141422592,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 152170496,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 162918400,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 169209856,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 27,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 176812032,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 179433472,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 19,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 181792768,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 182317056,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 182317056,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 182317056,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 182317056,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 184676352,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 84054016,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72343552,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 100392960,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 128442368,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 136044544,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 151773184,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 157540352,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 159637504,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 29,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 168288256,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 178774016,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 179822592,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 181133312,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 181133312,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 181133312,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 181133312,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 129003520,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73330688,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 92467200,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 132575232,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 137555968,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 141488128,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 149090304,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 165605376,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 33,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 169013248,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 27,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 173731840,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 173993984,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 174256128,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 174256128,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 174256128,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 174256128,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 174256128,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 174256128,
+          "Descriptors": 28,
+          "PIDs": [
+            3826,
+            3840
+          ]
+        }
+      ],
+      "RecoveryMS": 0,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 8,
+        "Active": 0,
+        "Cancelled": 0,
+        "MaxActive": 4,
+        "RSS": 17043456,
+        "Descriptors": 12,
+        "PIDs": [
+          3819
+        ]
+      },
+      "StartupMS": 104.384428,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 16,
+      "Errors": 0,
+      "Seconds": 12.862057666,
+      "RPS": 1.2439689212632705,
+      "TotalMS": {
+        "P50": 3136.465638,
+        "P95": 3333.358806,
+        "P99": 3333.358806
+      },
+      "FirstMS": {
+        "P50": 3.479071,
+        "P95": 4.667124,
+        "P99": 4.667124
+      },
+      "ResidualMS": {
+        "P50": 2662.55473,
+        "P95": 2936.880925,
+        "P99": 2936.880925
+      },
+      "FirstResidualMS": {
+        "P50": 2.370212,
+        "P95": 2.973843,
+        "P99": 2.973843
+      },
+      "CPUSeconds": 7.75,
+      "CPUCores": 0.6025474462368967,
+      "PeakRSSBytes": 185401344,
+      "PeakDescriptors": 27,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 2,
+      "HostGoroutinesIdle": 17,
+      "HostGoroutinesPeak": 33,
+      "HostGoroutinesAfter": 13
+    },
+    {
+      "Topology": "local",
+      "Mode": "SSE",
+      "Scenario": "slow",
+      "BodyBytes": 1024,
+      "Cancellations": 0,
+      "ResourceSamples": [
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18284544,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18284544,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19324928,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19324928,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18767872,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18767872,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18493440,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18493440,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18247680,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 17985536,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18673664,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18673664,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18935808,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18935808,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18644992,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20238336,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18022400,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18022400,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18345984,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18345984,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18632704,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18632704,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18714624,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18190336,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18255872,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19001344,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 19,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19165184,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19406848,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19406848,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19406848,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19406848,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19058688,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18604032,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18231296,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18890752,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18710528,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 17858560,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18841600,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 17604608,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18579456,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19001344,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18345984,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 19,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18083840,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 17752064,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 17752064,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 17752064,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18014208,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18284544,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18952192,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18804736,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18731008,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19599360,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18743296,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18591744,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 18296832,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19206144,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 28,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19914752,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 22,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19623936,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19308544,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19570688,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19570688,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19570688,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19570688,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19570688,
+          "Descriptors": 16,
+          "PIDs": [
+            3892
+          ]
+        }
+      ],
+      "RecoveryMS": 0,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 8,
+        "Active": 0,
+        "Cancelled": 0,
+        "MaxActive": 4,
+        "RSS": 18350080,
+        "Descriptors": 12,
+        "PIDs": [
+          3885
+        ]
+      },
+      "StartupMS": 274.321956,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 16,
+      "Errors": 0,
+      "Seconds": 12.846476315,
+      "RPS": 1.245477717599326,
+      "TotalMS": {
+        "P50": 3129.218769,
+        "P95": 3140.606465,
+        "P99": 3140.606465
+      },
+      "FirstMS": {
+        "P50": 2.578812,
+        "P95": 3.07019,
+        "P99": 3.07019
+      },
+      "ResidualMS": {
+        "P50": 2238.016223,
+        "P95": 2602.442265,
+        "P99": 2602.442265
+      },
+      "FirstResidualMS": {
+        "P50": 1.361896,
+        "P95": 1.989262,
+        "P99": 1.989262
+      },
+      "CPUSeconds": 3.25,
+      "CPUCores": 0.25298766138736306,
+      "PeakRSSBytes": 20238336,
+      "PeakDescriptors": 15,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 1,
+      "HostGoroutinesIdle": 16,
+      "HostGoroutinesPeak": 28,
+      "HostGoroutinesAfter": 12
+    },
+    {
+      "Topology": "split",
+      "Mode": "SSE",
+      "Scenario": "cancel",
+      "BodyBytes": 1024,
+      "Cancellations": 1474,
+      "ResourceSamples": [
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 65912832,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 66351104,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67543040,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 67,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68550656,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68018176,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68460544,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 65,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67891200,
+          "Descriptors": 58,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68100096,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68009984,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68194304,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 69,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67817472,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 68,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68698112,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67870720,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67584000,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67174400,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 66801664,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69926912,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 68,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69070848,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68743168,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69160960,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69054464,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 66228224,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 65757184,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67035136,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 66670592,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67633152,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68050944,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68190208,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68358144,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 63,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67993600,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69476352,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 70242304,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 59,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68235264,
+          "Descriptors": 56,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67817472,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 69,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68550656,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69009408,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67325952,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67235840,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67620864,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68280320,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 65,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68112384,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69402624,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69312512,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69992448,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 69,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 71557120,
+          "Descriptors": 59,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 70320128,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69718016,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 68288512,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 67117056,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        },
+        {
+          "Goroutines": 71,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 69619712,
+          "Descriptors": 60,
+          "PIDs": [
+            3933,
+            3948,
+            3954,
+            3960
+          ]
+        }
+      ],
+      "RecoveryMS": 0,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 4,
+        "Active": 0,
+        "Cancelled": 1626,
+        "MaxActive": 8,
+        "RSS": 15831040,
+        "Descriptors": 8,
+        "PIDs": [
+          3926
+        ]
+      },
+      "StartupMS": 340.12035,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 1474,
+      "Errors": 0,
+      "Seconds": 10.041204552,
+      "RPS": 146.7951372135338,
+      "TotalMS": {
+        "P50": 27.256689,
+        "P95": 48.464294,
+        "P99": 51.256726
+      },
+      "FirstMS": {
+        "P50": 27.249773,
+        "P95": 48.452408,
+        "P99": 51.226712
+      },
+      "ResidualMS": {
+        "P50": 27.256689,
+        "P95": 48.464294,
+        "P99": 51.256726
+      },
+      "FirstResidualMS": {
+        "P50": 27.249773,
+        "P95": 48.452408,
+        "P99": 51.226712
+      },
+      "CPUSeconds": 17.95,
+      "CPUCores": 1.7876341336383523,
+      "PeakRSSBytes": 71557120,
+      "PeakDescriptors": 59,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 71,
+      "HostGoroutinesPeak": 71,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "bundle",
+      "Mode": "SSE",
+      "Scenario": "cancel",
+      "BodyBytes": 1024,
+      "Cancellations": 1484,
+      "ResourceSamples": [
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39071744,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38686720,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38600704,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38817792,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38993920,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 41,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38629376,
+          "Descriptors": 34,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39669760,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40161280,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 49,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40624128,
+          "Descriptors": 35,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 49,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40255488,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39600128,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39522304,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39161856,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38322176,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 45,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39604224,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40054784,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39710720,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 49,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40681472,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40062976,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40034304,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39186432,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40452096,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40652800,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40017920,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39698432,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40452096,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39575552,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40333312,
+          "Descriptors": 33,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 50,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40271872,
+          "Descriptors": 35,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 41058304,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40169472,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 49,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40611840,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39538688,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40034304,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40501248,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40431616,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40669184,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 46,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40075264,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39772160,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 41054208,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 48,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40120320,
+          "Descriptors": 35,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 49,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39739392,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38813696,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39272448,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40525824,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40701952,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40890368,
+          "Descriptors": 34,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40546304,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40472576,
+          "Descriptors": 35,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40161280,
+          "Descriptors": 36,
+          "PIDs": [
+            4032,
+            4046
+          ]
+        }
+      ],
+      "RecoveryMS": 0,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 4,
+        "Active": 0,
+        "Cancelled": 1640,
+        "MaxActive": 8,
+        "RSS": 17334272,
+        "Descriptors": 8,
+        "PIDs": [
+          4025
+        ]
+      },
+      "StartupMS": 136.964469,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 1484,
+      "Errors": 0,
+      "Seconds": 10.049495683,
+      "RPS": 147.6691016953592,
+      "TotalMS": {
+        "P50": 26.910581,
+        "P95": 51.136871,
+        "P99": 52.211091
+      },
+      "FirstMS": {
+        "P50": 26.901403,
+        "P95": 51.127963,
+        "P99": 52.202289
+      },
+      "ResidualMS": {
+        "P50": 26.910581,
+        "P95": 51.136871,
+        "P99": 52.211091
+      },
+      "FirstResidualMS": {
+        "P50": 26.901403,
+        "P95": 51.127963,
+        "P99": 52.202289
+      },
+      "CPUSeconds": 14.389999999999999,
+      "CPUCores": 1.4319126505365354,
+      "PeakRSSBytes": 41058304,
+      "PeakDescriptors": 37,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 2,
+      "HostGoroutinesIdle": 39,
+      "HostGoroutinesPeak": 53,
+      "HostGoroutinesAfter": 13
+    },
+    {
+      "Topology": "local",
+      "Mode": "SSE",
+      "Scenario": "cancel",
+      "BodyBytes": 1024,
+      "Cancellations": 1521,
+      "ResourceSamples": [
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21098496,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21270528,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20164608,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21397504,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21041152,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21753856,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21442560,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21868544,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20971520,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21147648,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20869120,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21643264,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 48,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21323776,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22065152,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21762048,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22540288,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22540288,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 29,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22790144,
+          "Descriptors": 17,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 23289856,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21667840,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22716416,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21610496,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 51,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21307392,
+          "Descriptors": 25,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22605824,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22794240,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21942272,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22159360,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 49,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21573632,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21778432,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22523904,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21905408,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22396928,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 23425024,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22511616,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 23035904,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21610496,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 49,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22368256,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21819392,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22573056,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21168128,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22171648,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 53,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22433792,
+          "Descriptors": 23,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22417408,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21585920,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22106112,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 46,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 22609920,
+          "Descriptors": 23,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 23650304,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 23900160,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 23367680,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        },
+        {
+          "Goroutines": 52,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 24395776,
+          "Descriptors": 24,
+          "PIDs": [
+            4096
+          ]
+        }
+      ],
+      "RecoveryMS": 0,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 4,
+        "Active": 0,
+        "Cancelled": 1677,
+        "MaxActive": 10,
+        "RSS": 17793024,
+        "Descriptors": 8,
+        "PIDs": [
+          4089
+        ]
+      },
+      "StartupMS": 480.261156,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 1521,
+      "Errors": 0,
+      "Seconds": 10.041707312,
+      "RPS": 151.4682665747866,
+      "TotalMS": {
+        "P50": 26.354803,
+        "P95": 51.290842,
+        "P99": 51.973882
+      },
+      "FirstMS": {
+        "P50": 26.344725,
+        "P95": 51.273988,
+        "P99": 51.96614
+      },
+      "ResidualMS": {
+        "P50": 26.354803,
+        "P95": 51.290842,
+        "P99": 51.973882
+      },
+      "FirstResidualMS": {
+        "P50": 26.344725,
+        "P95": 51.273988,
+        "P99": 51.96614
+      },
+      "CPUSeconds": 5.79,
+      "CPUCores": 0.5765951765075704,
+      "PeakRSSBytes": 24395776,
+      "PeakDescriptors": 23,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 1,
+      "HostGoroutinesIdle": 28,
+      "HostGoroutinesPeak": 53,
+      "HostGoroutinesAfter": 4
+    },
+    {
+      "Topology": "split",
+      "Mode": "JSON",
+      "Scenario": "crash",
+      "BodyBytes": 1024,
+      "Cancellations": 0,
+      "ResourceSamples": [
+        {
+          "Goroutines": 45,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72298496,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 38,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73097216,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 37,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74080256,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74153984,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73564160,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74952704,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 75087872,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 76050432,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74772480,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 76492800,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 38,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74096640,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 42,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72491008,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 41,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73715712,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73699328,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73547776,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 40,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72773632,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 40,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72605696,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73797632,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 75706368,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 47,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 76324864,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73515008,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 36,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74473472,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 42,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74072064,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74153984,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73752576,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73850880,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72138752,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72536064,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 41,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72585216,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 45,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73752576,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73281536,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73682944,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72474624,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72736768,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72339456,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72437760,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 40,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72716288,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72769536,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73052160,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 40,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 72376320,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73789440,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73637888,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 41,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73560064,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 73371648,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74567680,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 75227136,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 75575296,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 43,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 74362880,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 39,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 75005952,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        },
+        {
+          "Goroutines": 35,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 75907072,
+          "Descriptors": 52,
+          "PIDs": [
+            4139,
+            4153,
+            4159,
+            4221
+          ]
+        }
+      ],
+      "RecoveryMS": 265.909349,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 8,
+        "Active": 0,
+        "Cancelled": 0,
+        "MaxActive": 4,
+        "RSS": 17268736,
+        "Descriptors": 12,
+        "PIDs": [
+          4132
+        ]
+      },
+      "StartupMS": 269.269035,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 11465,
+      "Errors": 0,
+      "Seconds": 10.001505536,
+      "RPS": 1146.3274162807002,
+      "TotalMS": {
+        "P50": 3.411151,
+        "P95": 4.419068,
+        "P99": 5.042323
+      },
+      "FirstMS": {
+        "P50": 3.398181,
+        "P95": 4.404345,
+        "P99": 5.019338
+      },
+      "ResidualMS": {
+        "P50": 2.137582,
+        "P95": 3.076451,
+        "P99": 3.684132
+      },
+      "FirstResidualMS": {
+        "P50": 2.124664,
+        "P95": 3.057386,
+        "P99": 3.658487
+      },
+      "CPUSeconds": 24.889999999999997,
+      "CPUCores": 2.488625328497743,
+      "PeakRSSBytes": 76492800,
+      "PeakDescriptors": 51,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 4,
+      "HostGoroutinesIdle": 35,
+      "HostGoroutinesPeak": 47,
+      "HostGoroutinesAfter": 31
+    },
+    {
+      "Topology": "bundle",
+      "Mode": "JSON",
+      "Scenario": "crash",
+      "BodyBytes": 1024,
+      "Cancellations": 0,
+      "ResourceSamples": [
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38522880,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 20,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39190528,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 20,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 37785600,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 27,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38146048,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 18,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38817792,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38903808,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 37961728,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38891520,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38772736,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39907328,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38510592,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38666240,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39514112,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 20,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38449152,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39833600,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39141376,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 37916672,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 27,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38473728,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38264832,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38780928,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39145472,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38359040,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38252544,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39731200,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39383040,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39251968,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38969344,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40140800,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38342656,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39546880,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 22,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39555072,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39886848,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39407616,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39411712,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38952960,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38481920,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39055360,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40206336,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 20,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39469056,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39051264,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38838272,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39710720,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39325696,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40243200,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38940672,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39575552,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 40484864,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 20,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 39211008,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 27,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38514688,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        },
+        {
+          "Goroutines": 25,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 38854656,
+          "Descriptors": 28,
+          "PIDs": [
+            4252,
+            4302
+          ]
+        }
+      ],
+      "RecoveryMS": 233.41966,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 8,
+        "Active": 0,
+        "Cancelled": 0,
+        "MaxActive": 4,
+        "RSS": 18853888,
+        "Descriptors": 12,
+        "PIDs": [
+          4245
+        ]
+      },
+      "StartupMS": 165.756287,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 11616,
+      "Errors": 0,
+      "Seconds": 10.003726732,
+      "RPS": 1161.16726407996,
+      "TotalMS": {
+        "P50": 3.387754,
+        "P95": 4.33471,
+        "P99": 4.974508
+      },
+      "FirstMS": {
+        "P50": 3.37452,
+        "P95": 4.318,
+        "P99": 4.939748
+      },
+      "ResidualMS": {
+        "P50": 2.10213,
+        "P95": 2.996236,
+        "P99": 3.6133
+      },
+      "FirstResidualMS": {
+        "P50": 2.090633,
+        "P95": 2.974383,
+        "P99": 3.588149
+      },
+      "CPUSeconds": 22.069999999999997,
+      "CPUCores": 2.206177816653298,
+      "PeakRSSBytes": 40484864,
+      "PeakDescriptors": 27,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 2,
+      "HostGoroutinesIdle": 17,
+      "HostGoroutinesPeak": 27,
+      "HostGoroutinesAfter": 13
+    },
+    {
+      "Topology": "local",
+      "Mode": "JSON",
+      "Scenario": "crash",
+      "BodyBytes": 1024,
+      "Cancellations": 0,
+      "ResourceSamples": [
+        {
+          "Goroutines": 23,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20971520,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 17,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20987904,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 20,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20844544,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20774912,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 20,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21237760,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21184512,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20336640,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20279296,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19689472,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21123072,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20156416,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20717568,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20676608,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 22,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21925888,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20590592,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20504576,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20865024,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21471232,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19562496,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 18,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20926464,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 22,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21258240,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20869120,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21090304,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21032960,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 23,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21278720,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20946944,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20725760,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21557248,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 22,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21078016,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21422080,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21733376,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21696512,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20197376,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21725184,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19902464,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20979712,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20127744,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21348352,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 23,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20410368,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21569536,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 16,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20570112,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 23,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21118976,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 22,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20455424,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21618688,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 22,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19419136,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20557824,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 24,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 20152320,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 21,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21413888,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 18,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 19697664,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        },
+        {
+          "Goroutines": 20,
+          "Active": 0,
+          "Cancelled": 0,
+          "MaxActive": 0,
+          "RSS": 21630976,
+          "Descriptors": 16,
+          "PIDs": [
+            4334
+          ]
+        }
+      ],
+      "RecoveryMS": 0,
+      "WarmupMS": 0,
+      "MockFinal": {
+        "Goroutines": 8,
+        "Active": 0,
+        "Cancelled": 0,
+        "MaxActive": 4,
+        "RSS": 16506880,
+        "Descriptors": 12,
+        "PIDs": [
+          4327
+        ]
+      },
+      "StartupMS": 363.177161,
+      "Concurrency": 4,
+      "Repeat": 1,
+      "Requests": 21567,
+      "Errors": 0,
+      "Seconds": 10.002462438,
+      "RPS": 2156.1690567380265,
+      "TotalMS": {
+        "P50": 1.831862,
+        "P95": 2.305751,
+        "P99": 2.603771
+      },
+      "FirstMS": {
+        "P50": 1.821716,
+        "P95": 2.292737,
+        "P99": 2.58747
+      },
+      "ResidualMS": {
+        "P50": 0.577554,
+        "P95": 0.994643,
+        "P99": 1.237306
+      },
+      "FirstResidualMS": {
+        "P50": 0.566968,
+        "P95": 0.980526,
+        "P99": 1.224506
+      },
+      "CPUSeconds": 10.979999999999999,
+      "CPUCores": 1.0977296908695473,
+      "PeakRSSBytes": 21925888,
+      "PeakDescriptors": 15,
+      "DescriptorKind": "POSIX file descriptors",
+      "Processes": 1,
+      "HostGoroutinesIdle": 16,
+      "HostGoroutinesPeak": 24,
+      "HostGoroutinesAfter": 12
+    }
+  ]
+}
